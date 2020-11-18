@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+
+@font-face {
+  font-family: Righteous;
+  src: url('../fonts/Righteous/Righteous-Regular.ttf');
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins',sans-serif;
+    color: #222;
+}
+
+#login-error{
+    font-size: .8rem;
+}
+
+.input-label{
+    border: 0;
+    user-select: none;
+}
+
+#front{
+    height: 100vh;
+}
+
+.front-logo{
+    width: 30%;
+}
+
+.front-info{
+    user-select: none;
+}
+
+.signup-btn{
+    background-color: #ff4f4f;
+}
+
+.app-name{
+    user-select: none;
+}
+
+.padding{
+    padding-bottom: 2rem;
+}
+
+.app-info{
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+.app-info hr{
+    border-top: 2px solid #b4b4b4;
+    width: 95%;
+    margin-top: .3rem;
+    margin-bottom: 1rem;
+}
+
+.app-what{
+    font-size: 200%;
+}
+
+.app-what-text{
+    font-size: 1rem;
+}
+
+.app-info-icon{
+    height: 100;
+    width: 100px;
+    margin-bottom: 10px;
+}
