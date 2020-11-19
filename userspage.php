@@ -7,11 +7,12 @@
 	<?php 
 		session_start();
 		include ('connection.php');
-		echo "<form method = 'POST'>
-				<input type='submit' name = 'logout' value = 'log out'>
-			 </form>
-		";
-		echo "WELCOME USER";
 	?>
+
+	<div class="container">
+		<form method = 'POST'>
+				<input type='submit' name = 'logout' value = 'log out'>
+		</form>
+	</div>
 </body>
 </html>
