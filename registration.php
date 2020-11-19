@@ -15,12 +15,12 @@
         padding: 0px;
     }
     .head{
-    	height: 100px;
-    	width: 100%;
+      height: 100px;
+      width: 100%;
     }
     img{
-    	height: 300px;
-    	width: 350px;
+      height: 300px;
+      width: 350px;
     }
   </style>
 <body>
@@ -78,7 +78,7 @@
 
        $name = "SELECT * FROM completename WHERE last_name = '".$_SESSION['last_name']."'";
       $address = "SELECT * FROM completeadd WHERE house_num = '".$_SESSION['houseNo']."'";
-      $contact = "SELECT * FROM contacttable WHERE contact_num = '".$SESSION_['contact_num']."'";
+      $contact = "SELECT * FROM contacttable WHERE contact_num = '".$_SESSION['contact_num']."'";
 
       $anames = $conn->query($name);
       $names = $anames->fetch_assoc();
@@ -111,7 +111,7 @@
           echo "Error: <br>" . $conn->error;
       }
 
-      header('Location: home.php');
+    //  header('Location: home.php');
    }
 
 
