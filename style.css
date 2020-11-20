@@ -34,8 +34,15 @@ html,body{
     user-select: none;
 }
 
-.signup-btn{
+.btn-primary{
     background-color: #ff4f4f;
+    border: 0;
+}
+
+.btn-primary:hover{
+    color: #ff4f4f;
+    border: 1px solid #ff4f4f;
+    background-color: white;
 }
 
 .app-name{
@@ -71,4 +78,56 @@ html,body{
     height: 100;
     width: 100px;
     margin-bottom: 10px;
+}
+
+.homepage-content{
+    user-select: none;
+}
+
+.side-panel {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.2s;
+    padding-top: 60px;
+    user-select: none;
+}
+
+.side-panel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    color: #818181;
+    display: block;
+    transition: 0.1s;
+}
+
+.side-panel a:hover {
+    color: #f1f1f1;
+}
+
+.side-panel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    user-select: none;
+}
+
+.side-panel-options a{
+    font-size: .8rem;
+}
+
+.openside{
+    user-select: none;
+}
+
+.center-text{
+    font-size: 1.5rem;
+    user-select: none;
+    font-family: Verdana;
 }
