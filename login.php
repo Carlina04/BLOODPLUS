@@ -1,49 +1,56 @@
+<?php include ('register.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>LOGIN</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 	<title>Blood+ 	</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link href="style.css" rel="stylesheet">
-	
+	<style type="text/css">
+        .error {
+            width: 92%; 
+            padding: 10px;
+            margin: 0px auto; 
+            border: 1px solid #a94442; 
+            color: #a94442; 
+            background: #f2dede; 
+            border-radius: 5px; 
+            text-align: center;
+      }   
+    </style>
 </head>
 <body>
-    <?php 
-    session_start();
-    include('connection.php');
+    <?php
+    $errors = array(); 
+    if (isset($_POST['login'])) {
+      $_SESSION['email'] = $_POST['email'];
+      $password = $_POST['password'];
 
-        if(isset($_POST['login'])){
+      if (empty($username)) {
+        array_push($errors, "Username is required");
+      }
+      if (empty($password)) {
+        array_push($errors, "Password is required");
+      }
 
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-
-            $sql = "SELECT * FROM userstable WHERE email = '$email' AND password = '$password'";
-
-            $result = $conn->query($sql);
-            if($row = $result->fetch_assoc()){
-
-                $_SESSION['user_id'] = $row['user_id'];
-                $_SESSION['info_id'] = $row['info_id'];
-                $_SESSION['user_type'] = $row['user_type']; 
-            }
-            
-
-
+      if (count($errors) == 0) {
+        
+        $query = "SELECT * FROM userstable WHERE email ='".$_SESSION['email']."' AND password = '$password'";
+        $results = $conn->query($query);
+        if ($results->num_rows == 1) {
+          $_SESSION['username'] = $username;
+          $_SESSION['success'] = "You are now logged in";
+          header('location: index.php');
+        }else {
+          array_push($errors, "Wrong username/password combination");
         }
-            if (isset($_SESSION['user_id'])) {
-                if ($_SESSION['user_type'] == 'Admin') {
-                        header( 'Location: registration.php');
-                }else if($_SESSION['user_type'] == 'User'){
-                        header('Location: home.php');
-                }else{
-                    echo 'Cannot LOGIN';
+      }
     }
-            }
+
     ?>
-
-
     <div id="front" class="container text-center p-4 position-relative">
         <div class="container text-center front-sub">
             <img src="img/logo.png" alt="logo" class="front-logo">
@@ -51,6 +58,7 @@
         </div>
         <div class="container text-center p-4 front-sub">
             <form action="" method="POST">
+                <?php include('error.php'); ?>
                 <div class="form-group">
                     <label class="form-control text-left input-label p-0">Email Address</label>
                     <input class="form-control text-center" type="email" name="email" required>

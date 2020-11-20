@@ -20,14 +20,14 @@
       width: 100%;
     }
     .error {
-        width: 92%; 
+      width: 92%; 
+        padding: 10px;
         margin: 0px auto; 
-        padding: 10px; 
         border: 1px solid #a94442; 
         color: #a94442; 
         background: #f2dede; 
         border-radius: 5px; 
-        text-align: left;
+        text-align: center;
       }
     </style>
 </head>

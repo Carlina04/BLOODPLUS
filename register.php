@@ -21,19 +21,19 @@
       $passwordc = $_POST['passwordc'];
 
       /*CHECK PASSWORD AND UNIQUE EMAIL*/
-      
-      if ($password != $passwordc) {
-      array_push($errors, "The two passwords do not match");
-      }
       $user_check_query = "SELECT * FROM userstable WHERE email= '".$_SESSION['email_add']."'";
         $result = $conn->query($user_check_query);
         $user = $result->fetch_assoc();
 
         if ($user) { // if user exists
           if ($user['email'] === $_SESSION['email_add']) {
-            array_push($errors, "Email already exists");
+            array_push($errors, "Email already exists!");
           }
         }
+      
+      if ($password != $passwordc) {
+      array_push($errors, "The two passwords do not match!");
+      }
 
 
       /*COMPLETE NAME*/
