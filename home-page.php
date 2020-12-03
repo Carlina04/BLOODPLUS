@@ -17,10 +17,10 @@
       <img src="img/sample-pic.png" alt="" class="w-50">
       <p class="text-light p-2">Name of User</p>
     </div>
-    <div class="side-panel-options">
-      <a href="">Something Here</a>
-      <a href="">Something Here</a>
-      <a href="">Something Here</a>
+    <div class="side-panel-options p-1">
+      <a href=""><i class="fas fa-bell mx-2"></i>Notifications</a>
+      <a href=""><i class="fas fa-history mx-2"></i>History</a>
+      <a href=""><i class="fas fa-cog mx-2"></i>Settings</a>
     </div>
   </div>
 </div>
@@ -33,7 +33,7 @@
 </div>
 
 <div class="container-fluid bg-light text-light text-center homepage-content">
-  <div class="row">
+  <div class="row h-100">
     <div class="col-6 p-0">
       <button class="h-100 w-100 btn" onclick=" displayContent(0)">Find Blood</button>
     </div>
@@ -43,11 +43,9 @@
   </div>
 </div>
 
-<div class="homepage-content">
-  <div class="find-blood">
-    <div class="container-fluid bg-danger p-5">
-       <p class="text-center">Find brrt brrt</p>
-    </div>
+<div class="container-fluid p-0 main-content">
+  <div class="find-blood vh-100">
+    
   </div>
 
   <div class="donate-blood text-center">

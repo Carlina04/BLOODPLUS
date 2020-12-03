@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Blood+ 	</title>
+	<title>Blood+</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link href="style.css" rel="stylesheet">
 	
@@ -34,7 +34,7 @@
     <hr>
     <div class="container-fluid padding text-center mt-5">
         <h6>New User? | 
-            <button type="button" class="btn btn-primary text-light btn-sm">Sign up</button>
+            <button type="button" class="btn btn-primary btn-sm">Sign up</button>
             <button type="button" class="btn btn-outline-dark btn-sm" onclick="window.location.href='#about'">Learn More</button>
         </h6>
     </div>
@@ -67,11 +67,11 @@
         
     <div class="container-fluid padding text-center">
         <div class="container">
-            <img class="app-info-icon" src="" alt="picture">
+            <img class="app-info-icon" src="img/find.png" alt="picture">
             <h4>Find Blood Faster</h4>
         </div>
-        <div class="container">
-            <img class="app-info-icon" src='' alt="picture">
+        <div class="container my-5">
+            <img class="app-info-icon" src="img/donate.png" alt="picture">
             <h4>Help Donate Blood</h4>
         </div>
     </div>

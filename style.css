@@ -28,6 +28,7 @@ html,body{
 
 .front-logo{
     width: 30%;
+    user-select: none;
 }
 
 .front-info{
@@ -37,6 +38,17 @@ html,body{
 .btn-primary{
     background-color: #ff4f4f;
     border: 0;
+}
+
+.btn-outline-primary{
+    border: 1px solid #ff4f4f;
+    color: #ff4f4f;
+}
+
+.btn-outline-primary:hover{
+    border: 1px solid white;
+    color: white;
+    background-color: #ff4f4f;
 }
 
 .btn-primary:hover{
@@ -80,8 +92,13 @@ html,body{
     margin-bottom: 10px;
 }
 
+.main-content{
+    height: calc(100vh - 100px);
+}
+
 .homepage-content{
     user-select: none;
+    height: 40px;
 }
 
 .side-panel {
@@ -118,6 +135,10 @@ html,body{
     user-select: none;
 }
 
+.side-panel-options{
+    background-color: #222;
+}
+
 .side-panel-options a{
     font-size: .8rem;
 }
@@ -130,4 +151,33 @@ html,body{
     font-size: 1.5rem;
     user-select: none;
     font-family: Verdana;
+}
+
+.nav{
+    height: 60px;
+}
+
+.error {
+    width: 92%; 
+      padding: 10px;
+      margin: 0px auto; 
+      border: 1px solid #a94442; 
+      color: #a94442; 
+      background: #f2dede; 
+      border-radius: 5px; 
+      text-align: center;
+    }
+.registration-nav{
+    height: 50px;
+}
+.registration-form label{
+    font-size: .8rem;
+}
+
+.registration-password{
+    font-size: .9rem;
+}
+
+label{
+    user-select: none;
 }
