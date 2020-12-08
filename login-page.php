@@ -1,3 +1,7 @@
+<?php
+    include ('register.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +14,13 @@
 </head>
 <body>
 
-<div id="front" class="container text-center p-4 position-relative">
+<div id="front" class="container text-center p-4">
     <div class="container text-center front-sub">
         <img src="img/logo.png" alt="logo" class="front-logo">
         <h3 class='app-name text-dark'><b>BLOOD+</b></h3>
     </div>
     <div class="container text-center p-4 front-sub">
-        <form action="">
+        <form action="home-page.php">
             <div class="form-group">
                 <label class="form-control text-left input-label p-0" for="">Email Address</label>
                 <input class="form-control text-center" type="text" name="" id="">
@@ -31,16 +35,17 @@
             <p id="login-error" class="text-danger"></p>
         </form>
     </div>
-    <hr>
+   
     <div class="container-fluid padding text-center mt-5">
         <h6>New User? | 
             <button type="button" class="btn btn-primary btn-sm">Sign up</button>
-            <button type="button" class="btn btn-outline-dark btn-sm" onclick="window.location.href='#about'">Learn More</button>
+            <button type="button" class="btn btn-outline-dark btn-sm" onclick="displayInfo(),window.location.href='#about'">Learn More</button>
         </h6>
     </div>
 </div>
+
+<div class='front-info' style="display:none">
 <hr>
-<div class='front-info'>
     <div id="about" class="container padding">
         <div class="app-info text-center">
             <div class="container">
@@ -102,12 +107,19 @@
             </div>
         </div>
     </div>
+    <div class="container-fluid padding text-center">
+        <hr>
+        <h5>Find Donor Now | <button type="button" class="btn btn-primary text-light">Sign up</button></h5>
+        <hr>
+    </div>
 </div>
-<div class="container-fluid padding text-center">
-    <hr>
-    <h5>Find Donor Now | <button type="button" class="btn btn-primary text-light">Sign up</button></h5>
-    <hr>
-</div>
+
+<script>
+    function displayInfo(){
+        var find = document.querySelector(".front-info");
+        find.style.display="block";
+    }
+</script>
 
 
 </body>

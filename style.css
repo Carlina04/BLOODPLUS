@@ -181,3 +181,44 @@ html,body{
 label{
     user-select: none;
 }
+
+.requestform-donor-pic{
+    width: 18%;
+}
+
+.requestform-request-text{
+    font-size: .8rem;
+    color: #b4b4b4;
+}
+
+.requestform-request-bt{
+    width: 35%;
+}
+
+.request-form label{
+    font-size: .8rem;
+}
+
+.request-form textarea{
+    font-size: .9rem;
+}
+
+.filter{
+  position: relative;
+}
+
+.filter-buttons{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.filter-buttons select{
+    font-size: .7rem;
+}
+
+.filter-buttons label{
+    font-size: .8rem;
+}
