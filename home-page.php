@@ -47,7 +47,7 @@
 
 <div class="container-fluid p-0 main-content">
   <div class="find-blood container-fluid h-100 p-0">
-    <div class="container-fluid p-2 filter text-light bg-dark" style="height:100%">
+    <div class="container-fluid p-2 filter" style="height:100%">
       <div class="container filter-buttons p-0">
         <div class="container-fluid text-center h5 filter-text">
           <p>Donor Search</p>
@@ -130,6 +130,7 @@
     var content = document.querySelector(".filter-content");
 
     filter.style.height="20%";
+    filter.style.boxShadow="0px 0px 1px 0px black";
     filterText.style.display="none";
 
     content.style.height="80%";

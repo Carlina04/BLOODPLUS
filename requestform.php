@@ -127,10 +127,11 @@
 					</select>
 				</div>
 				<div class="form-group h6 d-flex align-items-center">
-					<div class="container p-0">
-						<label for="">Needed Blood Type : </label>
-					</div>
-					<div class="container p-0">
+					
+					<div class="container w-50 p-0 mr-2">
+						<div class="container p-0">
+							<label for="">Needed Blood Type : </label>
+						</div>
 						<select name="" class="form-control" class="w-25" required>
 							<option selected hidden>Choose...</option>
 							<option value="A-">A-</option>
@@ -143,7 +144,17 @@
 							<option value="AB+">AB+</option>
 						</select>
 					</div>
-					<div class="container w-50"></div>
+					<div class="container w-50 p-0 ml-2">
+						<div class="container p-0">
+							<label for="">Blood Bag(s) : </label>
+						</div>
+						<select name="" class="form-control" class="" required>
+							<option selected hidden>Choose...</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+					</div>
 				</div>
 				<div class="form-group h6">
 					<label>Message :</label>

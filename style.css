@@ -222,3 +222,28 @@ label{
 .filter-buttons label{
     font-size: .8rem;
 }
+
+.bloodbank-title{
+    height: 70px;;
+}
+
+.bbank-info-pic{
+    width: 12%;
+    height: 12%;
+}
+
+.bbank-info{
+    height: 20vh;
+}
+
+.bbank-contact{
+    font: .5rem;
+}
+
+.bbank-description{
+    font-size: .7rem;
+    background-color: #dfdfdf;
+}
+.bbank-description-header{
+    font-size: .8rem;
+}
