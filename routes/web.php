@@ -25,4 +25,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/form', [App\Http\Controllers\UserController::class, 'index'])->name('form');
 Route::post('createuser',[UserController::class,'store']);
 
-// Route::get('/request', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/request', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
