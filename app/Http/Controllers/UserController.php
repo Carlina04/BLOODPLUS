@@ -20,7 +20,13 @@ class UserController extends Controller
     public function index()
     {
         //
-        return view('/form');
+        return view('/request');
+    }
+
+    public function req()
+    {
+        //
+        return view('/requests');
     }
 
     /**

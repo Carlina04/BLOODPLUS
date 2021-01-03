@@ -5,7 +5,8 @@
     	<div class="container text-center front-sub">
 			<h1>Request Form</h1>
 
-			<form method="POST" action="requestform.php">
+			<form action="createreq" method="post">
+                @csrf
 				<div class="form-group">	
 					<label class="form-control text-left input-label p-0 m-0" for="reqblood">Needed Blood type</label>
 					<select class="form-control" id="reqblood" name="reqblood" required>

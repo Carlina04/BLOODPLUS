@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\RequestInfo;
+use App\Models\HospitalInfo;
+use App\Models\CompleteAdd;
+use App\Models\InfoTable;
+use App\Models\UsersTable;
 
 class RequestController extends Controller
 {
@@ -14,6 +19,7 @@ class RequestController extends Controller
     public function index()
     {
         //
+        
     }
 
     /**
@@ -35,6 +41,18 @@ class RequestController extends Controller
     public function store(Request $request)
     {
         //
+        $addid = DB::table('complete_adds')->where('province', $request->city)->first()->add_id;
+        $hosid = DB::table('hospital_infos')->where('hos_name', $request->hos_name)->first()->hos_id;
+
+        $req = new RequestInfo;
+        //$req->patient_info_id = $addid;
+        $req->hos_admit_id = $hosid;
+        $req->req_blood = $request->reqblood;
+        $req->add_id = $addid;
+        $req->desc = $request->desc;
+        $req->save();
+
+        return redirect('/requests');
     }
 
     /**
