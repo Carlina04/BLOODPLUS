@@ -24,14 +24,15 @@
 				<div class="form-group h6 mt-4 mb-0 row">
 					<div class="col-6">
 						<div class="form-group">
+							<a href="/hospitals">Check Affiliated Hospitals</a><br>
 							<label class="form-control text-left input-label p-0 m-0" for="hos_name">Admitted Hospital</label>
 							<input type="text" class="form-control" name="hos_name" placeholder="Name of Hospital" required>
 						</div>
 					</div>
 					<div class="col-6">
 						<div class="form-group">
-						<label class="form-control text-left input-label p-0 m-0" for="city">Hospital Branch</label>
-						<input type="text" class="form-control" name="city" placeholder="Name of City"required>
+						<label class="form-control text-left input-label p-0 m-0" for="branch">Hospital Branch</label>
+						<input type="text" class="form-control" name="branch" placeholder="Name of Branch"required>
 						</div>
 					</div>
 				</div>

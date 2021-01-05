@@ -18,7 +18,7 @@ class CreateRequestInfosTable extends Migration
             $table->foreignId('patient_info_id');
             $table->foreignId('hos_admit_id');
             $table->enum('req_blood', ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-']);
-            $table->foreignId('add_id');
+            $table->string('branch');
             $table->longText('desc');
             $table->timestamps();
         });

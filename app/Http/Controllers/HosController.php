@@ -3,12 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\RequestInfo;
 use App\Models\HospitalInfo;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 
-class RequestController extends Controller
+class HosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,16 +15,10 @@ class RequestController extends Controller
     public function index()
     {
         //
-        $user_id = Auth::user()->id;
-        $req = User::find($user_id)->req;
+        $hos = Bookings::all();
+        return view('hospitals')->with('hos',$hos);
+    }
 
-        return view('requests')->with('req',$req);
-    }
-    public function req()
-    {
-        //
-        return view('request');
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -47,20 +38,6 @@ class RequestController extends Controller
     public function store(Request $request)
     {
         //
-        $hosid = DB::table('hospital_infos')->where([
-                                                    ['hos_name', $request->hos_name],
-                                                    ['hos_branch', $request->branch]
-                                                ])->first()->hos_id;
-
-        $req = new RequestInfo;
-        $req->patient_info_id = Auth::user()->id;
-        $req->hos_admit_id = $hosid;
-        $req->req_blood = $request->reqblood;
-        $req->branch = $request->branch;
-        $req->desc = $request->desc;
-        $req->save();
-
-        return redirect('/requests');
     }
 
     /**

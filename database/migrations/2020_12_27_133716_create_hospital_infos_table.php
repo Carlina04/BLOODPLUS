@@ -16,6 +16,7 @@ class CreateHospitalInfosTable extends Migration
         Schema::create('hospital_infos', function (Blueprint $table) {
             $table->id('hos_id');
             $table->string('hos_name');
+            $table->string('hos_branch');
             $table->foreignId('hos_add');
             $table->foreignId('hos_contact');
             $table->longText('desc');
