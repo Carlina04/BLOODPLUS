@@ -8,6 +8,8 @@ use App\Models\CompleteName;
 use App\Models\ContactTable;
 use App\Models\InfoTable;
 use App\Models\UsersTable;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
@@ -21,6 +23,34 @@ class UserController extends Controller
     {
         //
         return view('/form');
+    }
+
+    public function idx()
+    {
+        $user_id = Auth::user()->id;
+        $users = DB::table('users_tables')
+                ->join('info_tables', 'users_tables.info_id', '=', 'info_tables.info_id')
+                ->join('contact_tables', 'users_tables.info_id', '=', 'contact_tables.contact_id')
+                ->join('complete_names', 'users_tables.info_id', '=', 'complete_names.name_id')
+                ->join('complete_adds', 'users_tables.info_id', '=', 'complete_adds.add_id')
+                ->select('users_tables.*', 'info_tables.*', 'contact_tables.*','complete_names.*','complete_adds.*')
+                ->where('users_tables.info_id', $user_id)
+                ->get();
+        return view('userpage')->with('users',$users);
+    }
+
+    public function user()
+    {
+        $user_id = Auth::user()->id;
+        $users = DB::table('users_tables')
+                ->join('info_tables', 'users_tables.info_id', '=', 'info_tables.info_id')
+                ->join('contact_tables', 'users_tables.info_id', '=', 'contact_tables.contact_id')
+                ->join('complete_names', 'users_tables.info_id', '=', 'complete_names.name_id')
+                ->join('complete_adds', 'users_tables.info_id', '=', 'complete_adds.add_id')
+                ->select('users_tables.*', 'info_tables.*', 'contact_tables.*','complete_names.*','complete_adds.*')
+                ->where('users_tables.info_id', $user_id)
+                ->get();
+        return view('uuser')->with('users',$users);
     }
 
     /**
@@ -62,9 +92,9 @@ class UserController extends Controller
         $contact->email = $request->email;
         $contact->save();
 
-        $nameid = DB::table('complete_names')->where('last_name', $request->lName)->first()->name_id;
-        $addid = DB::table('complete_adds')->where('house_num', $request->houseNo)->first()->add_id;
-        $contactid = DB::table('contact_tables')->where('contact_num', $request->num)->first()->contact_id;
+        $nameid = DB::table('complete_names')->where('last_name', $request->lName)->value('name_id');
+        $addid = DB::table('complete_adds')->where('house_num', $request->houseNo)->value('add_id');
+        $contactid = DB::table('contact_tables')->where('contact_num', $request->num)->value('contact_id');
 
         $info = new InfoTable;
         $info->name_id = $nameid;
@@ -114,9 +144,18 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+
+    public function update(Request $request)
     {
         //
+        $user_id = Auth::user()->id;
+        $users = UsersTable::where('user_id', $user_id)
+            ->first();
+        $users->birthdate =$request->bday;
+        $users->gender = $request->gender;
+        $users->blood_type = $request->blood;
+        $users->save();
+        return redirect('/userpage');
     }
 
     /**

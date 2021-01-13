@@ -247,3 +247,13 @@ label{
 .bbank-description-header{
     font-size: .8rem;
 }
+
+.nav-link.dropdown-toggle.txt{
+    color: white;
+    font-size: 1.1rem;
+}
+
+.nav-link.txt{
+    color: white;
+    font-size: 1.1rem;
+}

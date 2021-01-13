@@ -24,3 +24,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/form', [App\Http\Controllers\UserController::class, 'index'])->name('form');
 Route::post('createuser',[UserController::class,'store']);
+Route::get('/userpage', [App\Http\Controllers\UserController::class, 'idx'])->name('userpage');
+Route::get('/uuser', [App\Http\Controllers\UserController::class, 'user'])->name('uuser');
+Route::put('/updateuser', [App\Http\Controllers\UserController::class, 'update']);
+Route::delete('deleteuser',[RoomController::class,'destroy']);
+
