@@ -27,5 +27,5 @@ Route::post('createuser',[UserController::class,'store']);
 
 Route::get('/myrequests', [App\Http\Controllers\RequestController::class, 'index'])->name('requests');
 Route::get('/request', [App\Http\Controllers\RequestController::class, 'req'])->name('request');
-Route::get('/request', [App\Http\Controllers\RequestController::class, 'store']);
+Route::get('createreq', [App\Http\Controllers\RequestController::class, 'store']);
 Route::get('/hospitals', [App\Http\Controllers\HosController::class, 'index'])->name('hospitals');

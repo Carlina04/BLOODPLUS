@@ -15,7 +15,7 @@ class HosController extends Controller
     public function index()
     {
         //
-        $hos = Bookings::all();
+        $hos = HospitalInfo::all();
         return view('hospitals')->with('hos',$hos);
     }
 
