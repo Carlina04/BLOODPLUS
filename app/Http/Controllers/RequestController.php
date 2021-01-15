@@ -7,6 +7,7 @@ use App\Models\RequestInfo;
 use App\Models\HospitalInfo;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class RequestController extends Controller
 {
@@ -18,8 +19,9 @@ class RequestController extends Controller
     public function index()
     {
         //
-        $user_id = Auth::user()->id;
-        $req = User::find($user_id)->req;
+        //$user_id = Auth::user()->id;
+        //$req = User::find($user_id)->requests;
+        $req = RequestInfo::all();
 
         return view('requests')->with('req',$req);
     }
@@ -56,7 +58,6 @@ class RequestController extends Controller
         $req->patient_info_id = Auth::user()->id;
         $req->hos_admit_id = $hosid;
         $req->req_blood = $request->reqblood;
-        $req->branch = $request->branch;
         $req->desc = $request->desc;
         $req->save();
 
@@ -103,8 +104,13 @@ class RequestController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
         //
+        $req_id = $request->req_id;
+        $reqs = RequestInfo::find($req_id);
+        $reqs->delete();
+
+        return redirect('/requests');
     }
 }

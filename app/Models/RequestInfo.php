@@ -13,4 +13,11 @@ class RequestInfo extends Model
     {
         return $this->belongsTo('App\Models\User','user_id','id');
     }
+
+    public function hospital()
+    {
+        return $this->belongsTo('App\Models\HospitalInfo','hos_admit_id','hos_id');
+    }
+
+    protected $primaryKey = 'req_id';
 }

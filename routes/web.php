@@ -25,7 +25,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/form', [App\Http\Controllers\UserController::class, 'index'])->name('form');
 Route::post('createuser',[UserController::class,'store']);
 
-Route::get('/myrequests', [App\Http\Controllers\RequestController::class, 'index'])->name('requests');
+Route::get('/requests', [App\Http\Controllers\RequestController::class, 'index'])->name('requests');
 Route::get('/request', [App\Http\Controllers\RequestController::class, 'req'])->name('request');
-Route::get('createreq', [App\Http\Controllers\RequestController::class, 'store']);
+Route::post('createreq', [App\Http\Controllers\RequestController::class, 'store']);
 Route::get('/hospitals', [App\Http\Controllers\HosController::class, 'index'])->name('hospitals');
+Route::delete('deletereq', [App\Http\Controllers\RequestController::class, 'destroy']);

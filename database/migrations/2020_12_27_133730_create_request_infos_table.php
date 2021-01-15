@@ -14,11 +14,10 @@ class CreateRequestInfosTable extends Migration
     public function up()
     {
         Schema::create('request_infos', function (Blueprint $table) {
-            $table->id('request_id');
+            $table->id('req_id');
             $table->foreignId('patient_info_id');
             $table->foreignId('hos_admit_id');
             $table->enum('req_blood', ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-']);
-            $table->string('branch');
             $table->longText('desc');
             $table->timestamps();
         });
