@@ -1,19 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>List of Requests</h1>
-    @foreach($req as $val)
-    <div class="card">
-        <p>Hospital Name: {{$val->hospital->hos_name}}<br>
-        Branch: {{$val->hospital->hos_branch}}<br>
-        Type of Blood Needed: {{$val->req_blood}}<br>
-        Description/Notes: {{$val->desc}}</p>
-    </div>
-    <form action="deletereq" method='POST'>
-            @csrf
-            @method('delete')
-            <input type="hidden" name='req_id' value="{{$val->req_id}}">
-            <input type="submit" value="Cancel" class="btn btn-danger">
-    </form>
+    <div id="front" class="container text-center p-4">
+        <div class="container text-center front-sub">
+            <h1>List of Requests</h1>
+            <div class="form-group">
+                <a href="/request">Make A New Request</a>
+            </div>
+            @foreach($req as $val)
+            <div class="card p-3 m-2 text-left">
+                <p><b>Hospital Name:</b> {{$val->hospital->hos_name}}<br>
+                <b>Branch:</b> {{$val->hospital->hos_branch}}<br>
+                <b>Type of Blood Needed:</b> {{$val->req_blood}}<br>
+                <b>Description/Notes:</b> {{$val->desc}}</p>
+            </div>
+            <form action="deletereq" method='POST'>
+                    @csrf
+                    @method('delete')
+                    <input type="hidden" name='req_id' value="{{$val->req_id}}">
+                    <input type="submit" value="Cancel" class="btn btn-danger">
+            </form>
+            <br>
     @endforeach
+        </div>
+    </div>
 @endsection

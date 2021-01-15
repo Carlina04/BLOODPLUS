@@ -247,3 +247,7 @@ label{
 .bbank-description-header{
     font-size: .8rem;
 }
+
+.input-label{
+    background-color: transparent;
+}
