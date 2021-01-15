@@ -59,6 +59,7 @@ class RequestController extends Controller
         $req->hos_admit_id = $hosid;
         $req->req_blood = $request->reqblood;
         $req->desc = $request->desc;
+        $req->status = 1;
         $req->save();
 
         return redirect('/requests');
