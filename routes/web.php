@@ -28,5 +28,9 @@ Route::post('createuser',[UserController::class,'store']);
 Route::get('/requests', [App\Http\Controllers\RequestController::class, 'index'])->name('requests');
 Route::get('/request', [App\Http\Controllers\RequestController::class, 'req'])->name('request');
 Route::post('createreq', [App\Http\Controllers\RequestController::class, 'store']);
-Route::get('/hospitals', [App\Http\Controllers\HosController::class, 'index'])->name('hospitals');
 Route::delete('deletereq', [App\Http\Controllers\RequestController::class, 'destroy']);
+
+Route::get('/hospitals', [App\Http\Controllers\HosController::class, 'index'])->name('hospitals');
+Route::get('/allhospitals', [App\Http\Controllers\HosController::class, 'allhos'])->name('allhospitals');
+Route::post('addhos', [App\Http\Controllers\HosController::class, 'store']);
+Route::delete('deletehos', [App\Http\Controllers\HosController::class, 'destroy']);

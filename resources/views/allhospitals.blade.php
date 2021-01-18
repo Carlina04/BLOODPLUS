@@ -5,7 +5,7 @@
     	<div class="container text-center front-sub">
             <h1>List of Affiliated Hospitals</h1>
             <div class="form-group">
-                <a href="/request">Go Back</a>
+                <a href="/addhospital">Add A Hospital</a>
             </div>
             <table class="table table-bordered">
             <thead class="thead-light">
@@ -15,7 +15,7 @@
                 <th scope="col">Hospital Address</th>
                 <th scope="col">Contacts</th>
                 <th scope="col">Description</th>
-                <!--<th scope="col">Action</th>-->
+                <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,6 +26,18 @@
                 <td>{{$val->address->province}}, {{$val->address->municipality}}, {{$val->address->barangay}}, {{$val->address->street}}</td>
                 <td>{{$val->contact->contact_num}}<br>{{$val->contact->email}}</td>
                 <td>{{$val->desc}}</td>
+                <td>
+                    <form action="/edithospital" method='POST'>
+                        <input type="hidden" name='req_id' value="{{$val->req_id}}">
+                        <input type="submit" value="Edit" class="btn btn-success">
+                    </form>
+                    <form action="deletehos" method='POST'>
+                        @csrf
+                        @method('delete')
+                        <input type="hidden" name='req_id' value="{{$val->req_id}}">
+                        <input type="submit" value="Delete" class="btn btn-danger">
+                    </form>
+                </td>
                 </tr>
             @endforeach
             </tbody>

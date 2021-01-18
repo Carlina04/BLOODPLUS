@@ -19,6 +19,13 @@ class HosController extends Controller
         return view('hospitals')->with('hos',$hos);
     }
 
+    public function allhos()
+    {
+        //
+        $hos = HospitalInfo::all();
+        return view('allhospitals')->with('hos',$hos);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -38,6 +45,31 @@ class HosController extends Controller
     public function store(Request $request)
     {
         //
+        $add = new CompleteAdd;
+        $add->province = $request->province;
+        $add->municipality = $request->municipality;
+        $add->barangay = $request->barangay;
+        $add->street = $request->street;
+        $add->house_num = $request->houseNo;
+        $add->save();
+        
+        $contact = new ContactTable;
+        $contact->contact_num = $request->num;
+        $contact->email = $request->email;
+        $contact->save();
+
+        $addid = DB::table('complete_adds')->where('house_num', $request->houseNo)->first()->add_id;
+        $contactid = DB::table('contact_tables')->where('contact_num', $request->num)->first()->contact_id;
+
+        $hos = new HospitalInfo;
+        $hos->hos_name = $request->hos_name;
+        $hos->hos_branch = $request->hos_branch;
+        $hos->hos_add = $addid;
+        $hos->hos_contact = $contactid;
+        $hos->desc = $request->desc;
+        $hos->save();
+
+        return redirect('/allhospitals');
     }
 
     /**
@@ -80,8 +112,13 @@ class HosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
         //
+        $hos_id = $request->hos_id;
+        $hos = HospitalInfo::find($hos_id);
+        $hos->delete();
+
+        return redirect('/allhospitals');
     }
 }
