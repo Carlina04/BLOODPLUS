@@ -16,7 +16,7 @@
                 <th scope="col">Type of Blood Needed</th>
                 <th scope="col">Description/Notes</th>
                 <th scope="col">Status</th>
-                <!--<th scope="col">Change Progress</th>-->
+                <!--<th scope="col">Donor ID</th>-->
                 </tr>
             </thead>
             <tbody>
@@ -28,6 +28,7 @@
                 <td>{{$val->req_blood}}</td>
                 <td>{{$val->desc}}</td>
                 <td>{{$val->status}}</td>
+                <!--<td>{{$val->status}}</td>-->
                 </tr>
             @endforeach
             </tbody>

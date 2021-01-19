@@ -26,6 +26,14 @@ class HosController extends Controller
         return view('allhospitals')->with('hos',$hos);
     }
 
+    public function edithos(Request $request)
+    {
+        //
+        $hos_id = $request->hos_id;
+        $hos = HospitalInfo::find($hos_id);
+        return view('edithospital')->with('hos',$hos);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -50,7 +58,7 @@ class HosController extends Controller
         $add->municipality = $request->municipality;
         $add->barangay = $request->barangay;
         $add->street = $request->street;
-        $add->house_num = $request->houseNo;
+        $add->house_num = 'N/A';
         $add->save();
         
         $contact = new ContactTable;
@@ -104,6 +112,16 @@ class HosController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $hos_id = $request->hos_id;
+        $hos = HospitalInfo::find($hos_id);
+        $hos->hos_name = $request->hos_name;
+        $hos->hos_branch = $request->hos_branch;
+        //$hos->hos_add = $addid; --> find how to edit the contact and address info
+        //$hos->hos_contact = $contactid;
+        $hos->desc = $request->desc;
+        $hos->save();
+
+        return view('/allhospitals');
     }
 
     /**

@@ -20,6 +20,7 @@ class CreateRequestInfosTable extends Migration
             $table->enum('req_blood', ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-']);
             $table->longText('desc');
             $table->enum('status', ['Pending', 'Complete']);
+            //$table->foreignId('donor_id');
             $table->timestamps();
         });
     }

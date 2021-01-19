@@ -60,6 +60,7 @@ class RequestController extends Controller
         $req->req_blood = $request->reqblood;
         $req->desc = $request->desc;
         $req->status = 1;
+        //$req->donor_id = 0;
         $req->save();
 
         return redirect('/requests');
