@@ -18,4 +18,6 @@ class HospitalInfo extends Model
     {
         return $this->belongsTo('App\Models\ContactTable','hos_contact','contact_id');
     }
+
+    protected $primaryKey = 'hos_id';
 }

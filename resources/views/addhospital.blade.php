@@ -7,7 +7,6 @@
 
 			<form action="addhos" method="post">
 				@csrf
-                @method('put')
 				<div class="form-group">	
 				<div class="form-group h6 mt-4 mb-0 row">
 					<div class="col-6">

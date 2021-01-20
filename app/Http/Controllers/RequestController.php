@@ -25,6 +25,7 @@ class RequestController extends Controller
 
         return view('requests')->with('req',$req);
     }
+    
     public function req()
     {
         //
@@ -55,12 +56,11 @@ class RequestController extends Controller
                                                 ])->first()->hos_id;
 
         $req = new RequestInfo;
-        $req->patient_info_id = Auth::user()->id;
+        $req->request_from = Auth::user()->id;
         $req->hos_admit_id = $hosid;
         $req->req_blood = $request->reqblood;
         $req->desc = $request->desc;
         $req->status = 1;
-        //$req->donor_id = 0;
         $req->save();
 
         return redirect('/requests');

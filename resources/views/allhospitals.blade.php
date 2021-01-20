@@ -27,14 +27,14 @@
                 <td>{{$val->contact->contact_num}}<br>{{$val->contact->email}}</td>
                 <td>{{$val->desc}}</td>
                 <td>
-                    <form action="/edithospital" method='POST'>
-                        <input type="hidden" name='req_id' value="{{$val->req_id}}">
+                    <form action="/edithospital" method='GET'>
+                        <input type="hidden" name='hos_id' value="{{$val->hos_id}}">
                         <input type="submit" value="Edit" class="btn btn-success">
                     </form>
                     <form action="deletehos" method='POST'>
                         @csrf
                         @method('delete')
-                        <input type="hidden" name='req_id' value="{{$val->req_id}}">
+                        <input type="hidden" name='hos_id' value="{{$val->hos_id}}">
                         <input type="submit" value="Delete" class="btn btn-danger">
                     </form>
                 </td>

@@ -32,6 +32,7 @@ Route::delete('deletereq', [App\Http\Controllers\RequestController::class, 'dest
 
 Route::get('/hospitals', [App\Http\Controllers\HosController::class, 'index'])->name('hospitals');
 Route::get('/allhospitals', [App\Http\Controllers\HosController::class, 'allhos'])->name('allhospitals');
+Route::get('/addhospital', [App\Http\Controllers\HosController::class, 'addhos'])->name('addhospital');
 Route::get('/edithospital', [App\Http\Controllers\HosController::class, 'edithos'])->name('edithospital');
 Route::post('addhos', [App\Http\Controllers\HosController::class, 'store']);
 Route::delete('deletehos', [App\Http\Controllers\HosController::class, 'destroy']);
