@@ -1,2 +1,1 @@
-# BLOODPLUS
-Project in IM 2 and WEBDEV 2
+Still BloodPlus BUT NOW in LARAVEL!!!
