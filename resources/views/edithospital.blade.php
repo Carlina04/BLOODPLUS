@@ -8,7 +8,7 @@
 			<form action="edithos" method="post">
 				@csrf
         @method('put')
-        <input type="hidden" name='hos_id' value="{{$hos->id}}">
+        <input type="hidden" name='hos_id' value="{{$hos->hos_id}}">
 				<div class="form-group">	
 				<div class="form-group h6 mt-4 mb-0 row">
 					<div class="col-6">
@@ -28,7 +28,7 @@
           <div class="col-5">
             <div class="form-group">
               <label>Phone Number</label>
-              <input type="tel" class="form-control" name="num" value="{{$hos->contact->contact_num}}" pattern="^(09)\d{9}$" required>
+              <input type="tel" class="form-control" name="num" value="{{$hos->contact->contact_num}}" required>
             </div>
           </div>
           <div class="col-7">
@@ -77,7 +77,7 @@
         </div>
 				<div class="form-group">
 					<label class="form-control text-left input-label p-0 m-0" for="desc">Description:</label>
-					<textarea name="desc" class="form-control text-justify p-10 m-0" placeholder="{{$hos->desc}}"></textarea>
+					<textarea name="desc" class="form-control text-justify p-10 m-0" placeholder="{{$hos->desc}}">{{$hos->desc}}</textarea>
 				</div>
 				<br>
 				<button class="btn btn-primary w-50">Update</button>

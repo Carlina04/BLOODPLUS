@@ -12,7 +12,9 @@
                 <p><b>Hospital Name:</b> {{$val->hospital->hos_name}}<br>
                 <b>Branch:</b> {{$val->hospital->hos_branch}}<br>
                 <b>Type of Blood Needed:</b> {{$val->req_blood}}<br>
-                <b>Description/Notes:</b> {{$val->desc}}</p>
+                <b>Description/Notes:</b> {{$val->desc}}<br>
+                <b>Status:</b> {{$val->status}}<br>
+                <b>Donor:</b> {{$val->request_to}}</p>
             </div>
             <form action="deletereq" method='POST'>
                     @csrf

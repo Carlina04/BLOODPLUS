@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class CompleteAdd extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'add_id';
 }

@@ -130,19 +130,19 @@ class HosController extends Controller
 
         $addid = DB::table('complete_adds')->where('add_id','=', $hoss->hos_add)->first()->add_id;
         $add = CompleteAdd::where('add_id',$addid)->first();
-        $add->province = $request->address->province;
-        $add->municipality = $request->address->municipality;
-        $add->barangay = $request->address->barangay;
-        $add->street = $request->address->street;
+        $add->province = $request->province;
+        $add->municipality = $request->municipality;
+        $add->barangay = $request->barangay;
+        $add->street = $request->street;
         $add->save();
 
         $contactid = DB::table('contact_tables')->where('contact_id','=', $hoss->hos_contact)->first()->contact_id;
         $contact = ContactTable::where('contact_id',$contactid)->first();
-        $contact->contact_num = $request->contact->num;
-        $contact->email = $request->contact->email;
+        $contact->contact_num = $request->num;
+        $contact->email = $request->email;
         $contact->save();
 
-        return view('/allhospitals');
+        return redirect('/allhospitals');
     }
 
     /**

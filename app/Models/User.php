@@ -42,6 +42,6 @@ class User extends Authenticatable
     ];
 
     public function requests(){
-        return $this->hasMany('App\Models\RequestInfo','user_id','id');
+        return $this->hasMany('App\Models\RequestInfo','request_from','id');
     }
 }

@@ -27,6 +27,7 @@ Route::post('createuser',[UserController::class,'store']);
 
 Route::get('/requests', [App\Http\Controllers\RequestController::class, 'index'])->name('requests');
 Route::get('/request', [App\Http\Controllers\RequestController::class, 'req'])->name('request');
+Route::get('/allrequests', [App\Http\Controllers\RequestController::class, 'allreq'])->name('allrequests');
 Route::post('createreq', [App\Http\Controllers\RequestController::class, 'store']);
 Route::delete('deletereq', [App\Http\Controllers\RequestController::class, 'destroy']);
 

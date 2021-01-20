@@ -19,9 +19,8 @@ class RequestController extends Controller
     public function index()
     {
         //
-        //$user_id = Auth::user()->id;
-        //$req = User::find($user_id)->requests;
-        $req = RequestInfo::all();
+        $user_id = Auth::user()->id;
+        $req = User::find($user_id)->requests;
 
         return view('requests')->with('req',$req);
     }
@@ -30,6 +29,14 @@ class RequestController extends Controller
     {
         //
         return view('request');
+    }
+
+    public function allreq()
+    {
+        //
+        $req = RequestInfo::all();
+
+        return view('allrequests')->with('req',$req);
     }
     /**
      * Show the form for creating a new resource.
