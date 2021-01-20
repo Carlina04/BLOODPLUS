@@ -3,6 +3,69 @@
 @section('content')
     
 <div class="container">
+<div class='front-info'>
+    <div id="about" class="container padding">
+        <div class="app-info text-center">
+            <div class="container">
+                <h1 class="app-what">What is Blood+?</h1>
+            </div>
+            <hr>
+            <div class="container">
+                <p class="app-what-text text-justify">
+                    Lorem ipsum dolor sit amet, consectetur 
+                    adipiscing elit, sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud 
+                    exercitation ullamco laboris nisi ut 
+                    aliquip ex ea commodo consequat. Duis aute 
+                    irure dolor in reprehenderit in voluptate 
+                    velit esse cillum dolore eu fugiat nulla 
+                    pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia 
+                        deserunt mollit anim id est laborum.	
+                </p>
+            </div>
+        </div>
+    </div>
+        
+    <div class="container-fluid padding text-center">
+        <div class="container">
+            <img class="app-info-icon" src="img/find.png" alt="picture">
+            <h4>Find Blood Faster</h4>
+        </div>
+        <div class="container my-5">
+            <img class="app-info-icon" src="img/donate.png" alt="picture">
+            <h4>Help Donate Blood</h4>
+        </div>
+    </div>
+    <hr>
+    <div class="container padding">
+        <div class="app-info text-center">
+            <div class="container">
+                <h1 class="app-what">Why Blood+?</h1>
+            </div>
+            <hr>
+            <div class="container app-what-text text-justify">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur 
+                    adipiscing elit, sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud 
+                    exercitation ullamco laboris nisi ut 
+                    aliquip ex ea commodo consequat.	
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur 
+                    adipiscing elit, sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud 
+                    exercitation ullamco laboris nisi ut 
+                    aliquip ex ea commodo consequat.	
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
     <div class="row justify-content-center">
         <div class="col-md-8">
     <div class="container-fluid bg-light text-light text-center homepage-content">

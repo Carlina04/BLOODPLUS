@@ -1,17 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.lay')
 
 @section('content')
-<div class="d-flex shadow-sm position-sticky p-3 bg-white rounded justify-content-between align-items-center container-fluid registration-nav ">
-    <div class="container">
-      <button class="btn"><i class="fas fa-chevron-left"></i></button>
-    </div>
-    <div class="container text-center">
-      
-    </div>
-    <div class="container d-flex justify-content-end">
-      <button class="btn-sm btn btn-outline-primary">Login Instead</button>
-    </div>
-  </div>
 <form class="" action="createuser" method="post">
     @csrf
     <div class="container-fluid px-5 registration-form">

@@ -9,7 +9,7 @@ class InfoTable extends Model
 {
     use HasFactory;
 
-    
+    protected $primaryKey = 'info_id';
     public function add()
     {
         return $this->hasOne('App\Models\CompleteAdd', 'add_id', 'add_id');

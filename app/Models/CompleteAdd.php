@@ -9,6 +9,7 @@ class CompleteAdd extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'add_id';
     public function infotable()
     {
         return $this->belongsTo('App\Models\InfoTable', 'add_id', 'add_id');

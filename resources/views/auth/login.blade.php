@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="container">
+    <div class="container text-center front-sub">
+        <img src="img/logo.png" alt="logo" class="front-logo">
+        <h3 class='app-name text-dark'><b>BLOOD+</b></h3>
+    </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -56,15 +60,14 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
                             </div>
                         </div>
                     </form>
+                    <hr>
+                    <div class="col-md-8 offset-md-4">
+                        <form action="/register" class="form-group row"><h5>New User? |</h5> &nbsp&nbsp&nbsp&nbsp&nbsp 
+                        <input type="submit" class="btn btn-primary btn-sm" value = 'Sign Up'></form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -27,5 +27,7 @@ Route::post('createuser',[UserController::class,'store']);
 Route::get('/userpage', [App\Http\Controllers\UserController::class, 'idx'])->name('userpage');
 Route::get('/uuser', [App\Http\Controllers\UserController::class, 'user'])->name('uuser');
 Route::put('/updateuser', [App\Http\Controllers\UserController::class, 'update']);
-Route::delete('deleteuser',[RoomController::class,'destroy']);
+Route::delete('deleteuser',[UserController::class,'destroy']);
 
+Route::get('/allusers', [App\Http\Controllers\UserController::class, 'allusers'])->name('allusers');
+ 
