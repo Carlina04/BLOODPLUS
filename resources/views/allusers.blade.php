@@ -7,7 +7,9 @@
         <br><br>
         <div class='text-center'>
            <i class="fas fa-user fa-7x"></i><br><br>
-           <h2>{{$users['name'][$value]->first_name}} {{$users['name'][$value]->mid_name}} {{$users['name'][$value]->last_name}}</h2><hr>
+           <h2>{{$users['name'][$value]->first_name}} {{$users['name'][$value]->mid_name}} {{$users['name'][$value]->last_name}}</h2>
+            <h4 style="color:blue">{{$users['user'][$value]->user_type}}</h4>
+            <hr>
         </div>
             <h5><b>Blood Type</b>: {{$users['info'][$value]->blood_type}}</h5>
             <h5><b>Address</b>: House No. {{$users['add'][$value]->house_num}} {{$users['add'][$value]->street}} St. {{$users['add'][$value]->barangay}}, {{$users['add'][$value]->municipality}} City, {{$users['add'][$value]->province}}</h5>
