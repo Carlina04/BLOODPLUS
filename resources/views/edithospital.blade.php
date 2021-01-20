@@ -14,13 +14,13 @@
 					<div class="col-6">
 						<div class="form-group">
 							<label class="form-control text-left input-label p-0 m-0" for="hos_name">Name of Hospital</label>
-							<input type="text" class="form-control" name="hos_name" placeholder="{{$hos->hos_name}}" required>
+							<input type="text" class="form-control" name="hos_name" value="{{$hos->hos_name}}" required>
 						</div>
 					</div>
 					<div class="col-6">
 						<div class="form-group">
 						<label class="form-control text-left input-label p-0 m-0" for="branch">Hospital Branch</label>
-						<input type="text" class="form-control" name="hos_branch" placeholder="{{$hos->hos_branch}}" required>
+						<input type="text" class="form-control" name="hos_branch" value="{{$hos->hos_branch}}" required>
 						</div>
 					</div>
 				</div>
@@ -28,13 +28,13 @@
           <div class="col-5">
             <div class="form-group">
               <label>Phone Number</label>
-              <input type="tel" class="form-control" name="num" placeholder="{{$hos->contact->contact_num}}" pattern="^(09)\d{9}$" required>
+              <input type="tel" class="form-control" name="num" value="{{$hos->contact->contact_num}}" pattern="^(09)\d{9}$" required>
             </div>
           </div>
           <div class="col-7">
             <div class="form-group">
               <label >Email Address</label>
-              <input type="email" class="form-control" name="email" placeholder="{{$hos->contact->email}}" required>
+              <input type="email" class="form-control" name="email" value="{{$hos->contact->email}}" required>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@
                 <label>Street</label>
               </div>
               <div class="form-group col-9 p-0">
-                <input type="text" class="form-control" name="street" placeholder="{{$hos->address->street}}" required>
+                <input type="text" class="form-control" name="street" value="{{$hos->address->street}}" required>
               </div>
             </div>
             <div class="row">
@@ -54,7 +54,7 @@
                 <label>Barangay</label>
               </div>
               <div class="form-group col-9 p-0">
-                <input type="text" class="form-control" name="barangay" placeholder="{{$hos->address->barangay}}" required>
+                <input type="text" class="form-control" name="barangay" value="{{$hos->address->barangay}}" required>
               </div>
             </div>
             <div class="row">
@@ -62,7 +62,7 @@
                 <label>City</label>
               </div>
               <div class="form-group col-9 p-0">
-                <input type="text" class="form-control" name="municipality" placeholder="{{$hos->address->municipality}}" required>
+                <input type="text" class="form-control" name="municipality" value="{{$hos->address->municipality}}" required>
               </div>
             </div>
             <div class="row">
@@ -70,7 +70,7 @@
                 <label>Province</label>
               </div>
               <div class="form-group col-9 p-0">
-                <input type="text" class="form-control" name="province" placeholder="{{$hos->address->province}}" required>
+                <input type="text" class="form-control" name="province" value="{{$hos->address->province}}" required>
               </div>
             </div>
            </div>

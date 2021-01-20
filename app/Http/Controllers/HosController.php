@@ -118,17 +118,29 @@ class HosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         //
         $hos_id = $request->hos_id;
-        $hos = HospitalInfo::find($hos_id);
-        $hos->hos_name = $request->hos_name;
-        $hos->hos_branch = $request->hos_branch;
-        //$hos->hos_add = $addid; --> find how to edit the contact and address info
-        //$hos->hos_contact = $contactid;
-        $hos->desc = $request->desc;
-        $hos->save();
+        $hoss = HospitalInfo::find($hos_id);
+        $hoss->hos_name = $request->hos_name;
+        $hoss->hos_branch = $request->hos_branch;
+        $hoss->desc = $request->desc;
+        $hoss->save();
+
+        $addid = DB::table('complete_adds')->where('add_id','=', $hoss->hos_add)->first()->add_id;
+        $add = CompleteAdd::where('add_id',$addid)->first();
+        $add->province = $request->address->province;
+        $add->municipality = $request->address->municipality;
+        $add->barangay = $request->address->barangay;
+        $add->street = $request->address->street;
+        $add->save();
+
+        $contactid = DB::table('contact_tables')->where('contact_id','=', $hoss->hos_contact)->first()->contact_id;
+        $contact = ContactTable::where('contact_id',$contactid)->first();
+        $contact->contact_num = $request->contact->num;
+        $contact->email = $request->contact->email;
+        $contact->save();
 
         return view('/allhospitals');
     }
