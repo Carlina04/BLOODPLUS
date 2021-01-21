@@ -8,6 +8,7 @@ use App\Models\CompleteName;
 use App\Models\ContactTable;
 use App\Models\InfoTable;
 use App\Models\UsersTable;
+use App\Models\RequestInfo;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -218,13 +219,16 @@ class UserController extends Controller
         $contactid = DB::table('contact_tables')->where('contact_id','=', $users->contact_id)->first()->contact_id;
         $contact = ContactTable::find($contactid);
 
+        $user_id = Auth::user()->id;
+        $req = User::find($user_id)->requests;
+
         $contact->delete();
         $add->delete();
         $name->delete();
         $info->delete();
         $utable->delete();
         $user->delete();
-
+        $req->each->delete();
 
         return redirect('/login');
     }

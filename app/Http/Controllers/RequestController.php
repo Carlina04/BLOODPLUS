@@ -120,6 +120,6 @@ class RequestController extends Controller
         $reqs = RequestInfo::find($req_id);
         $reqs->delete();
 
-        return redirect('/myrequests');
+        return redirect('/allrequests');
     }
 }
