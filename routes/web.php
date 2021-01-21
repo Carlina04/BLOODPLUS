@@ -21,11 +21,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/adminnav', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin');
 
 Route::get('/form', [App\Http\Controllers\UserController::class, 'index'])->name('form');
 Route::post('createuser',[UserController::class,'store']);
 
-Route::get('/requests', [App\Http\Controllers\RequestController::class, 'index'])->name('requests');
+Route::get('/myrequests', [App\Http\Controllers\RequestController::class, 'index'])->name('myrequests');
 Route::get('/request', [App\Http\Controllers\RequestController::class, 'req'])->name('request');
 Route::get('/allrequests', [App\Http\Controllers\RequestController::class, 'allreq'])->name('allrequests');
 Route::post('createreq', [App\Http\Controllers\RequestController::class, 'store']);

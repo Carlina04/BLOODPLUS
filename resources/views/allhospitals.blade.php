@@ -5,7 +5,7 @@
     	<div class="container text-center front-sub">
             <h1>List of Affiliated Hospitals</h1>
             <div class="form-group">
-                <a href="/addhospital">Add A Hospital</a>
+                <a href="/addhospital" class="btn btn-primary">Add A Hospital</a>
             </div>
             <table class="table table-bordered">
             <thead class="thead-light">
@@ -29,13 +29,14 @@
                 <td>
                     <form action="/edithospital" method='GET'>
                         <input type="hidden" name='hos_id' value="{{$val->hos_id}}">
-                        <input type="submit" value="Edit" class="btn btn-success">
+                        <input type="submit" value="Edit" class="btn btn-success btn-block">
                     </form>
+                    <br style="display: block;content: '';margin-top: 5px;">
                     <form action="deletehos" method='POST'>
                         @csrf
                         @method('delete')
                         <input type="hidden" name='hos_id' value="{{$val->hos_id}}">
-                        <input type="submit" value="Delete" class="btn btn-danger">
+                        <input type="submit" value="Delete" class="btn btn-danger btn-block">
                     </form>
                 </td>
                 </tr>

@@ -25,23 +25,23 @@
 				<div class="form-group h6 mt-4 mb-0 row">
           <div class="col-5">
             <div class="form-group">
-              <label>Phone Number</label>
+              <label class="form-control text-left input-label p-0 m-0" for="num">Phone Number</label>
               <input type="tel" class="form-control" name="num" placeholder="09XXXXXXXXX" pattern="^(09)\d{9}$" required>
             </div>
           </div>
           <div class="col-7">
             <div class="form-group">
-              <label >Email Address</label>
+              <label class="form-control text-left input-label p-0 m-0" for="email">Email Address</label>
               <input type="email" class="form-control" name="email" placeholder="example@email.com" required>
             </div>
           </div>
         </div>
         <div class="form-group h6 mt-2 mb-0">
-          <label>Complete Address</label>
+          <label class="form-control text-left input-label p-0 m-0">Complete Address</label>
           <div class="container font-weight-normal">
             <div class="row">
               <div class="form-group col-3 py-2">
-                <label>Street</label>
+                <label class="form-control text-left input-label p-0 m-0" for="street">Street</label>
               </div>
               <div class="form-group col-9 p-0">
                 <input type="text" class="form-control" name="street" required>
@@ -49,7 +49,7 @@
             </div>
             <div class="row">
               <div class="form-group col-3 py-2">
-                <label>Barangay</label>
+                <label class="form-control text-left input-label p-0 m-0" for="barangay">Barangay</label>
               </div>
               <div class="form-group col-9 p-0">
                 <input type="text" class="form-control" name="barangay" required>
@@ -57,7 +57,7 @@
             </div>
             <div class="row">
               <div class="form-group col-3 py-2">
-                <label>City</label>
+                <label class="form-control text-left input-label p-0 m-0" for="municipality">City</label>
               </div>
               <div class="form-group col-9 p-0">
                 <input type="text" class="form-control" name="municipality" required>
@@ -65,7 +65,7 @@
             </div>
             <div class="row">
               <div class="form-group col-3 py-2">
-                <label>Province</label>
+                <label class="form-control text-left input-label p-0 m-0" for="province">Province</label>
               </div>
               <div class="form-group col-9 p-0">
                 <input type="text" class="form-control" name="province" required>
@@ -79,7 +79,9 @@
 				</div>
 				<br>
 				<button class="btn btn-primary w-50">Submit</button>
-			</form>
+      </form>
+      <br>
+      <br>
 		</div>
 	</div>
 @endsection

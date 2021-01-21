@@ -22,7 +22,7 @@ class RequestController extends Controller
         $user_id = Auth::user()->id;
         $req = User::find($user_id)->requests;
 
-        return view('requests')->with('req',$req);
+        return view('myrequests')->with('req',$req);
     }
     
     public function req()
