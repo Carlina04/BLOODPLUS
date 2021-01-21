@@ -70,7 +70,7 @@ class RequestController extends Controller
         $req->status = 1;
         $req->save();
 
-        return redirect('/requests');
+        return redirect('/myrequests');
     }
 
     /**
@@ -120,6 +120,6 @@ class RequestController extends Controller
         $reqs = RequestInfo::find($req_id);
         $reqs->delete();
 
-        return redirect('/requests');
+        return redirect('/myrequests');
     }
 }

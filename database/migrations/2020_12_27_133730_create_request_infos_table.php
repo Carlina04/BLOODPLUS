@@ -15,11 +15,12 @@ class CreateRequestInfosTable extends Migration
     {
         Schema::create('request_infos', function (Blueprint $table) {
             $table->id('req_id');
-            $table->foreignId('patient_info_id');
+            $table->foreignId('request_from');
             $table->foreignId('hos_admit_id');
             $table->enum('req_blood', ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-']);
-            $table->foreignId('add_id');
-            $table->longText('desc');
+            $table->longText('desc')->nullable();
+            $table->enum('status', ['Pending', 'Complete']);
+            $table->foreignId('request_to')->nullable()->unsigned();
             $table->timestamps();
         });
     }

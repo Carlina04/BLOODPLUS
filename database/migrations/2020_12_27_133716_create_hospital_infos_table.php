@@ -19,7 +19,7 @@ class CreateHospitalInfosTable extends Migration
             $table->string('hos_branch');
             $table->foreignId('hos_add');
             $table->foreignId('hos_contact');
-            $table->longText('desc');
+            $table->longText('desc')->nullable();
             $table->timestamps();
         });
     }
