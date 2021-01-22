@@ -63,6 +63,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/userpage"><i class="fas fa-user mx-2"></i>User</a>
                                     <a class="dropdown-item" href="/home"><i class="fas fa-home mx-2"></i>Home</a>
+                                    <a class="dropdown-item" href="/dashboard"><i class="fas fa-home mx-2"></i>Dashboard</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

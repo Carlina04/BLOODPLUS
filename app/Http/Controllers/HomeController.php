@@ -44,14 +44,12 @@ class HomeController extends Controller
                     ->where('users_tables.user_id','<>',$id)
                     ->get();
 
-        $type = DB::select("SELECT user_type FROM users_tables WHERE user_id = '$id'");
-
-        return view('home')->with('donors',$donors)->with('seekers',$seekers)->with('type',$type);
+        return view('dashboard')->with('donors',$donors)->with('seekers',$seekers);
     }
 
-    public function filter()
+    public function home()
     {
-        return 123;
+        return view('home');
     }
 
     public function admin()
