@@ -13,7 +13,7 @@
         </div>
 
         <div class="container p-3 mt-4 rounded shadow-sm">
-            <table class="table table-bordered">
+            <table class="table table-bordered table-hover text-justify">
             <thead class="thead-light">
                 <tr>
                 <th scope="col">Requester ID</th>
@@ -27,7 +27,13 @@
             </thead>
             <tbody>
             @foreach($req as $val)
+                @if($val->status=='Pending')
                 <tr>
+                @elseif($val->status=='Denied')
+                <tr class="table-danger">
+                @else
+                <tr class="table-success">
+                @endif
                 <td>{{$val->request_from}}</td>
                 <td>{{$val->hospital->hos_name}}</td>
                 <td>{{$val->hospital->hos_branch}}</td>

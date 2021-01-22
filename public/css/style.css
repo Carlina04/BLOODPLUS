@@ -261,3 +261,21 @@ label{
 .input-label{
     background-color: transparent;
 }
+
+.adminnav .btn-sm-lg {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    font-size: 15px;
+  }
+.adminnav .row {
+    margin: 10em;
+}
+
+.btn-light {
+    border-radius: 50%;
+}
+
+.col-sm-4 h4{
+    padding-top:10px;
+}

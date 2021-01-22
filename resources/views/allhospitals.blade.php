@@ -16,7 +16,7 @@
         </div>
 
         <div class="container p-3 mt-4 rounded shadow-sm">
-            <table class="table table-bordered">
+            <table class="table table-bordered table-hover text-center">
             <thead class="thead-light">
                 <tr>
                 <th scope="col">Hospital Name</th>

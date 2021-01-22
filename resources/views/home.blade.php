@@ -3,6 +3,12 @@
 @section('content')
 
 <div class='front-info'>
+    <div class="container bg-danger text-center">
+        <br>
+        <br>
+        <br>
+    </div>
+
     <div class="container-fluid padding text-center">
         <div class="container">
             <img src="img/logoblood.png" alt="picture" style="width:50%;">
@@ -11,20 +17,20 @@
 
     <div class="container bg-danger text-center">
         <div class="row align-center p-5">
-            <div class="col-4">
-                <a href="/dashboard">
+            <div class="col-sm-4">
+                <a href="/dashboard" class="btn btn-sm-lg btn-light p-3">
                     <img class="app-info-icon" src="img/dashboard.png" alt="picture">
                 </a>
                 <h4>Dashboard</h4>
             </div>
-            <div class="col-4">
-                <a href="/myrequests">
+            <div class="col-sm-4">
+                <a href="/myrequests" class="btn btn-sm-lg btn-light p-3">
                     <img class="app-info-icon" src="img/checklist.png" alt="picture">
                 </a>
                 <h4>My Requests</h4>
             </div>
-            <div class="col-4">            
-                <a href="/bloodbanks">
+            <div class="col-sm-4">            
+                <a href="/bloodbanks" class="btn btn-sm-lg btn-light p-3">
                     <img class="app-info-icon" src="img/bbank.png" alt="picture">
                 </a>
                 <h4>Blood Banks</h4>

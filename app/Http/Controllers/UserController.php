@@ -37,7 +37,16 @@ class UserController extends Controller
                 ->select('users_tables.*', 'info_tables.*', 'contact_tables.*','complete_names.*','complete_adds.*')
                 ->where('users_tables.user_id', $user_id)
                 ->get();
-        return view('userpage')->with('users',$users);
+       
+        $user_type=DB::select("SELECT user_type FROM users_tables WHERE user_id = '$user_id'");
+
+        foreach($user_type as $type){
+            if($type->user_type=="user"){
+                return view('userpage')->with('users',$users);
+            }else{
+                return view('userpage-admin')->with('users',$users);
+            }
+        }
     }
 
     public function indx()
@@ -192,6 +201,7 @@ class UserController extends Controller
         $contact = ContactTable::where('contact_id',$contactid)->first();
         $contact->contact_num = $request->num;
         $contact->save();
+
         return redirect('/userpage');
     }
 
