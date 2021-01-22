@@ -46,17 +46,13 @@
             <hr>
             <div class="container">
                 <p class="app-what-text text-justify">
-                    Lorem ipsum dolor sit amet, consectetur 
-                    adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut 
-                    aliquip ex ea commodo consequat. Duis aute 
-                    irure dolor in reprehenderit in voluptate 
-                    velit esse cillum dolore eu fugiat nulla 
-                    pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia 
-                        deserunt mollit anim id est laborum.    
+               &nbsp&nbsp&nbsp&nbsp&nbsp This blood donation system caters to the appointment between the donor and the
+patient. The system can provide different functions to fully meet what the users are
+finding. The system connects those who seek blood and those who can donate blood.
+Users will always get notified in every update on the appointment. Information about the
+donor and the patient is kept secured in the system. Since most people carry their
+phones, it ensures automatic tracking of the location which helps users find donors in an
+easy way. The data is stored in a centralized server which cannot be accessed easily. <br>    
                 </p>
             </div>
         </div>
@@ -80,20 +76,11 @@
             <hr>
             <div class="container app-what-text text-justify">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur 
-                    adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut 
-                    aliquip ex ea commodo consequat.    
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur 
-                    adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut 
-                    aliquip ex ea commodo consequat.    
+                &nbsp&nbsp&nbsp&nbsp&nbsp The system can accept posts all around the vicinity. The data in the system will be
+stored within a time span. It will be deleted on the server after the time requirement.
+Accessing the system must require an internet connection. The application is only
+limited within Cebu City for now and sooner be expanded once the application becomes
+stable enough to handle a very large amount of data from different parts of the country.    
                 </p>
             </div>
         </div>

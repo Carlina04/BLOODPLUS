@@ -3,7 +3,7 @@
 @section('content')
 
 
-
+        
 @foreach ($info as $info)
 
     

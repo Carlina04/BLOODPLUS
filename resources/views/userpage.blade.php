@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    
+<div class='container'>
+        <div class="form-group">
+                <a href="/home">← Home</a>
+        </div>
     <div class='container card '>
     <br><br>
         
@@ -33,5 +36,5 @@
         </div>
         @endforeach
     </div>
-        
+</div>
 @endsection

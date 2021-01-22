@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class='container'>
+    <div class="form-group">
+                <a href="/home">← Home</a>
+        </div>
     <div  class="container p-3">
         <div class="container p-2 rounded shadow">
             <div class="d-flex bd-highlight align-items-center">
@@ -33,5 +37,6 @@
             <br>
         @endforeach
         </div>
+    </div>
     </div>
 @endsection

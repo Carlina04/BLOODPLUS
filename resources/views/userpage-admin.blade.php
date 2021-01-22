@@ -1,9 +1,13 @@
 @extends('layouts.admin')
 
 @section('content')
-    
+<div class='container'>
+        <div class="form-group">
+            <a href="/adminnav">← Back to Navigation</a>
+        </div>
     <div class='container card '>
     <br><br>
+    
         
         @foreach($users as $value)
         <div class='text-center'>
@@ -33,5 +37,5 @@
         </div>
         @endforeach
     </div>
-        
+</div>
 @endsection
