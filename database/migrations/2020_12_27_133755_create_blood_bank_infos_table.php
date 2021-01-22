@@ -15,7 +15,7 @@ class CreateBloodBankInfosTable extends Migration
     {
         Schema::create('blood_bank_infos', function (Blueprint $table) {
             $table->id('bbank_info_id');
-            $table->longText('desc');
+            $table->longText('descr');
             $table->foreignId('bbank_add');
             $table->foreignId('contact_id');
             $table->timestamps();

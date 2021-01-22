@@ -20,7 +20,7 @@
         <h5><b>Birthdate</b>: {{$value->birthdate}}</h5>
         <h5><b>Gender</b>: {{$value->gender}}</h5>
         <div class="button-container"><hr>
-                <form class='text-center' method="GET" action="/uuser">
+                <form class='text-center' method="GET" action="/updateuser">
                         <input type="hidden" name='id' value="{{$value->user_id}}">
                         <input type="submit" class="btn btn-success" value="Update">
                 </form><hr>

@@ -40,19 +40,20 @@ class UserController extends Controller
         return view('userpage')->with('users',$users);
     }
 
-    public function user()
+    public function indx()
     {
         $user_id = Auth::user()->id;
         $users = DB::table('users_tables')
                 ->join('info_tables', 'users_tables.info_id', '=', 'info_tables.info_id')
-                ->join('contact_tables', 'users_tables.info_id', '=', 'contact_tables.contact_id')
-                ->join('complete_names', 'users_tables.info_id', '=', 'complete_names.name_id')
-                ->join('complete_adds', 'users_tables.info_id', '=', 'complete_adds.add_id')
+                ->join('contact_tables', 'info_tables.contact_id', '=', 'contact_tables.contact_id')
+                ->join('complete_names', 'info_tables.name_id', '=', 'complete_names.name_id')
+                ->join('complete_adds', 'info_tables.add_id', '=', 'complete_adds.add_id')
                 ->select('users_tables.*', 'info_tables.*', 'contact_tables.*','complete_names.*','complete_adds.*')
-                ->where('users_tables.info_id', $user_id)
+                ->where('users_tables.user_id', $user_id)
                 ->get();
-        return view('uuser')->with('users',$users);
+        return view('updateuser')->with('users',$users);
     }
+
 
     public function allusers()
     {

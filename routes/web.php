@@ -26,10 +26,9 @@ Route::get('/adminnav', [App\Http\Controllers\HomeController::class, 'admin'])->
 Route::get('/form', [App\Http\Controllers\UserController::class, 'index'])->name('form');
 Route::post('createuser',[UserController::class,'store']);
 Route::get('/userpage', [App\Http\Controllers\UserController::class, 'idx'])->name('userpage');
-Route::get('/uuser', [App\Http\Controllers\UserController::class, 'user'])->name('uuser');
+Route::get('/updateuser', [App\Http\Controllers\UserController::class, 'indx'])->name('updateuser');
 Route::put('/updateuser', [App\Http\Controllers\UserController::class, 'update']);
 Route::delete('deleteuser',[UserController::class,'destroy']);
-
 Route::get('/allusers', [App\Http\Controllers\UserController::class, 'allusers'])->name('allusers');
 
 Route::get('/myrequests', [App\Http\Controllers\RequestController::class, 'index'])->name('myrequests');

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BloodInfo extends Model
+class bloodbank_stocks extends Model
 {
     use HasFactory;
 }

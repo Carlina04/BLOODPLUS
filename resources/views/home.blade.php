@@ -2,97 +2,148 @@
 
 @section('content')
     
-<div class="container">
-<div class='front-info'>
-    <div id="about" class="container padding">
-        <div class="app-info text-center">
-            <div class="container">
-                <h1 class="app-what">What is Blood+?</h1>
-            </div>
-            <hr>
-            <div class="container">
-                <p class="app-what-text text-justify">
-                    Lorem ipsum dolor sit amet, consectetur 
-                    adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut 
-                    aliquip ex ea commodo consequat. Duis aute 
-                    irure dolor in reprehenderit in voluptate 
-                    velit esse cillum dolore eu fugiat nulla 
-                    pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia 
-                        deserunt mollit anim id est laborum.	
-                </p>
-            </div>
-        </div>
-    </div>
-        
-    <div class="container-fluid padding text-center">
-        <div class="container">
-            <img class="app-info-icon" src="img/find.png" alt="picture">
-            <h4>Find Blood Faster</h4>
-        </div>
-        <div class="container my-5">
-            <img class="app-info-icon" src="img/donate.png" alt="picture">
-            <h4>Help Donate Blood</h4>
-        </div>
-    </div>
-    <hr>
-    <div class="container padding">
-        <div class="app-info text-center">
-            <div class="container">
-                <h1 class="app-what">Why Blood+?</h1>
-            </div>
-            <hr>
-            <div class="container app-what-text text-justify">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur 
-                    adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut 
-                    aliquip ex ea commodo consequat.	
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur 
-                    adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut 
-                    aliquip ex ea commodo consequat.	
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-    <div class="container-fluid bg-light text-light text-center homepage-content">
-    <div class="row h-100">
-        <div class="col-6 p-0">
-        <button class="h-100 w-100 btn" onclick=" displayContent(0)">Find Blood</button>
-        </div>
-        <div class="col-6 p-0">
-        <button class="h-100 w-100 btn" onclick=" displayContent(1)">Donate Blood</button>
-        </div>
-    </div>
-    </div>
-
-    <div class="container-fluid p-0 main-content">
-     <div class="find-blood vh-100">
-    
-    </div>
-
-  <div class="donate-blood text-center">
-    <div class="container-fluid p-5 d-flex align-items-center justify-content-center">
-    <p>You still need to register to become a Donor.</p>
-    </div>
-    <div class="container-fluid p-5 d-flex align-items-center justify-content-center">
-      <button class="btn btn-primary">Register Now</button>
+<div class="container p-3">
+  
+  <div class="container p-2 rounded shadow">
+    <div class="d-flex bd-highlight align-items-center">
+      <div class="mr-auto p-2 bd-highlight h-auto">
+        <h5>Dashboard</h5>
+      </div>
+      <div class="p-2 bd-highlight">
+        <button class="btn btn-outline-dark seek-btn" onclick="displayContent(0)">Seek</button>
+      </div>
+      <div class="p-2 bd-highlight">
+        <button class="btn btn-outline-dark find-btn" onclick="displayContent(1)">Donate</button>
+      </div>
     </div>
   </div>
+
+  <div class="container mt-4 find-blood p-0">
+
+      @if(count($donors)>0)
+
+          @foreach ($donors as $donor)
+  
+                <div class='container  mt-5 p-3 rounded shadow'>
+                  <div class='d-flex bd-highlight'>
+                    <div class='p-2 w-100 bd-highlight'>
+                      <p class='h6 m-0'><span class='text-secondary'>Name : </span>{{$donor->last_name}}, {{$donor->first_name}} {{$donor->mid_name}}</p>
+                    </div>
+                    <div class='p-2 flex-shrink-0 bd-highlight'>
+                      <p class='h6 m-0'><span class='text-secondary'>Blood Type : </span>{{$donor->blood_type}}</p>
+                    </div>
+                  </div>
+
+                  <div class='d-flex justify-content-between p-2'>
+                    <p class='h6 m-0'><span class='text-secondary'>Age : </span>
+                        <?php
+                           $birth= @value($donor->birthdate);
+                           $age = \Carbon\Carbon::parse($birth)->age;
+                           echo $age;
+                        ?>
+                    </p>
+                    <p class='h6 m-0'><span class='text-secondary'>Gender : </span>
+                        <?php
+                            if($donor->gender==='m'){
+                              echo "Male";
+                            }else{
+                              echo "Female";
+                            }
+                        ?>
+                    </p>
+                    <p class='h6 m-0'><span class='text-secondary'>Location : </span>{{$donor->municipality}}, {{$donor->province}}</p>
+                  </div>
+
+                  <div class='d-flex justify-content-start p-2'>
+                    <div class='mr-2'>
+                      <p class='h6 m-0 text-secondary'>Contact Details : </p>
+                    </div>
+                    <div>
+                      <p class='h6 m-0'>{{$donor->contact_num}}</p>
+                      <p class='h6 m-0'>{{$donor->email}}</p>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <div class='mt-3 d-flex justify-content-end'>
+                    <input type='button' name='request' value='Request' class='btn-sm shadow-none btn-success' >
+                  </div>
+                </div>
+          
+          @endforeach
+
+      @else
+        <div class="container bg-light d-flex justify-content-center p-4 shadow-sm">
+          <h5>No Donor</h5>
+        </div>
+      @endif
+
+  </div>
+
+  <div class="container mt-4 shadow-sm rounded donate-blood p-0" style="display: none">
+   
+    @if(count($seekers)>0)
+
+      @foreach ($seekers as $seeker)
+          
+        <div class='container  mt-5 p-3 rounded shadow'>
+            <div class='mt-3 d-flex justify-content-start p-2'>
+              <p class='h6 m-0'><span class='text-secondary'>Requested By : </span></p>
+            </div>
+
+            <hr>
+
+            <div class='mt-3 d-flex justify-content-start p-2'>
+              <p class='h6 m-0'><span class='text-dark'>Patient Information</span></p>
+            </div>
+
+            <div class=' px-4'>
+              <p class='h6 m-0 p-1'><span class='text-secondary'>Name : </span></p>
+              <p class='h6 m-0 p-1'><span class='text-secondary'>Age : </span></p>
+              <p class='h6 m-0 p-1'><span class='text-secondary'>Gender : </span></p>
+              <p class='h6 m-0 p-1'><span class='text-secondary'>Hospital Admitted : </span></p>
+              <div class='d-flex justify-content-start p-1'>
+                <div class='mr-2'>
+                  <p class='h6 m-0 text-secondary'>Contact Details : </p>
+                </div>
+                <div>
+                  <p class='h6 m-0'></p>
+                  <p class='h6 m-0'></p>
+                </div>
+              </div>
+              <p class='h6 m-0 p-1'><span class='text-secondary'>Blood Type Needed : </span></p>
+              <div class='d-flex justify-content-start p-1'>
+                <div class='mr-2'>
+                  <p class='h6 m-0 text-secondary'>Description : </p>
+                </div>
+                <div>
+                  <p class='h6 m-0'></p>
+                  <p class='h6 m-0'></p>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class='mt-3 d-flex justify-content-end'>
+              <input type='button' name='accept' value='Decline' class='btn-sm shadow-none btn-outline-danger mx-1' >
+              <input type='button' name='decline' value='Donate' class='btn-sm shadow-none btn-success mx-1' >
+            </div>
+          </div>
+    
+        @endforeach
+
+    @else
+        <div class="container bg-light d-flex justify-content-center p-4">
+            <h5>No Request</h5>
+        </div>
+    @endif
+  </div>
+  
 </div>
+
+
 
 <script>
 
@@ -102,7 +153,6 @@
 
     find.style.display="none";
     donate.style.display="none";
-
     if (num==0) {
       find.style.display="block";
     }else{
@@ -112,7 +162,5 @@
   }
 
 </script>
-        </div>
-    </div>
-</div>
+
 @endsection

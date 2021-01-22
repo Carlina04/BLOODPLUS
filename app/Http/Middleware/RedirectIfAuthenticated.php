@@ -23,7 +23,7 @@ class RedirectIfAuthenticated
       
           switch ($role) {
             case 'admin':
-               return redirect('/allusers');
+               return redirect('/adminnav');
                break;
             case 'user':
                return redirect('/home');

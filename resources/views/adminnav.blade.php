@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
     <div id="front" class="text-center m-0 d-flex flex-column justify-content-center">
