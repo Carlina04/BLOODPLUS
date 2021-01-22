@@ -5,6 +5,9 @@
     	<div class="container text-center front-sub">
             <h1>List of Affiliated Hospitals</h1>
             <div class="form-group">
+                <a href="/adminnav">Back to Navigation</a>
+            </div>
+            <div class="form-group">
                 <a href="/addhospital" class="btn btn-primary">Add A Hospital</a>
             </div>
             <table class="table table-bordered">

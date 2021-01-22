@@ -4,6 +4,9 @@
     <div id="front" class="container text-center p-4">
     	<div class="container text-center front-sub">
             <h1>List of All Requests</h1>
+            <div class="form-group">
+                <a href="/adminnav">Back to Navigation</a>
+            </div>
             <table class="table table-bordered">
             <thead class="thead-light">
                 <tr>
