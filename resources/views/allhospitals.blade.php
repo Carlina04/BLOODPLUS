@@ -1,15 +1,21 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div id="front" class="container text-center p-4">
-    	<div class="container text-center front-sub">
-            <h1>List of Affiliated Hospitals</h1>
-            <div class="form-group">
-                <a href="/adminnav">Back to Navigation</a>
+    <div class="container p-3">
+        <div class="form-group">
+            <a href="/adminnav">← Back to Navigation</a>
+        </div>
+    
+        <div class="container p-2 rounded shadow">
+            <div class="d-flex bd-highlight align-items-center">
+                <div class="p-2 h5 w-100 bd-highlight">Affiliated Hospitals</div>
+                <div class="p-2 flex-shrink-0 bd-highlight">
+                          <a href="/addhospital" class="btn-sm btn-success new-btn">Add A Hospital</a>
+                </div>
             </div>
-            <div class="form-group">
-                <a href="/addhospital" class="btn btn-primary">Add A Hospital</a>
-            </div>
+        </div>
+
+        <div class="container p-3 mt-4 rounded shadow-sm">
             <table class="table table-bordered">
             <thead class="thead-light">
                 <tr>

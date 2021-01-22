@@ -45,3 +45,7 @@ Route::post('addhos', [App\Http\Controllers\HosController::class, 'store']);
 Route::delete('deletehos', [App\Http\Controllers\HosController::class, 'destroy']);
 Route::put('edithos', [App\Http\Controllers\HosController::class, 'update']);
  
+Route::get('/bloodbanks', [App\Http\Controllers\BloodbankController::class, 'index']);
+Route::post('/bloodbanks', [App\Http\Controllers\BloodbankController::class, 'store']);
+Route::post('/bloodbanks/info', [App\Http\Controllers\BloodbankInfoController::class, 'index']);
+Route::delete('/bloodbanks/info',[App\Http\Controllers\BloodbankInfoController::class,'destroy']);

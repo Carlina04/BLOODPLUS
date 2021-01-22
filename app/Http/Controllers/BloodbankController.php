@@ -9,7 +9,7 @@ use App\Models\CompleteAdd;
 use App\Models\ContactTable;
 use App\Models\BloodBankInfo;
 use App\Models\BloodBanks;
-use App\Models\BloodBankStocks;
+use App\Models\bloodbank_stocks;
 use DB;
 
 class BloodbankController extends Controller
@@ -60,7 +60,7 @@ class BloodbankController extends Controller
         $add->municipality = $request->municipality;
         $add->barangay = $request->barangay;
         $add->street = $request->street;
-        $add->house_num = $request->houseNo;
+        $add->house_num = 'N/A';
         $add->save();
 
         $contact = new ContactTable;
@@ -77,7 +77,7 @@ class BloodbankController extends Controller
         $bbank_info->contact_id = $contact_count;
         $bbank_info->save();
 
-        $bbank_stocks=new BloodbankStocks;  
+        $bbank_stocks=new bloodbank_stocks;  
         $bbank_stocks->A_neg = $request->A_neg;
         $bbank_stocks->A_pos = $request->A_pos;
         $bbank_stocks->B_neg = $request->B_neg;

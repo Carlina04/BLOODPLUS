@@ -13,7 +13,7 @@
                 <a href="/allhospitals" class="btn btn-warning btn-lg btn-block">List of Affiliated Hospitals</a>
             </div>
             <div class="form-group">
-                <a href="" class="btn btn-danger btn-lg btn-block">List of All Blood Banks</a>
+                <a href="/bloodbanks" class="btn btn-danger btn-lg btn-block">List of All Blood Banks</a>
             </div>
         </div>
     </div>

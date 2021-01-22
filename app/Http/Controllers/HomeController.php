@@ -44,7 +44,9 @@ class HomeController extends Controller
                     ->where('users_tables.user_id','<>',$id)
                     ->get();
 
-        return view('home')->with('donors',$donors)->with('seekers',$seekers);
+        $type = DB::select("SELECT user_type FROM users_tables WHERE user_id = '$id'");
+
+        return view('home')->with('donors',$donors)->with('seekers',$seekers)->with('type',$type);
     }
 
     public function filter()

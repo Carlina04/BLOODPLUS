@@ -63,6 +63,11 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/userpage"><i class="fas fa-user mx-2"></i>User</a>
                                     <a class="dropdown-item" href="/adminnav"><i class="fas fa-home mx-2"></i>Home</a>
+                                    @foreach ($type as $type)
+                                        @if ($type->user_type=="admin")
+                                        <a class="dropdown-item" href="/adminnav"><i class="fas fa-home mx-2"></i>Home</a>
+                                        @endif
+                                    @endforeach
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
