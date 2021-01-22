@@ -37,6 +37,8 @@ Route::get('/request', [App\Http\Controllers\RequestController::class, 'req'])->
 Route::get('/allrequests', [App\Http\Controllers\RequestController::class, 'allreq'])->name('allrequests');
 Route::post('createreq', [App\Http\Controllers\RequestController::class, 'store']);
 Route::delete('deletereq', [App\Http\Controllers\RequestController::class, 'destroy']);
+Route::post('declinereq', [App\Http\Controllers\RequestController::class, 'declinereq']);
+Route::post('acceptreq', [App\Http\Controllers\RequestController::class, 'acceptreq']);
 
 Route::get('/hospitals', [App\Http\Controllers\HosController::class, 'index'])->name('hospitals');
 Route::get('/allhospitals', [App\Http\Controllers\HosController::class, 'allhos'])->name('allhospitals');

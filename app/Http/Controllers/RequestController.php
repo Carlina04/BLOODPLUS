@@ -25,10 +25,12 @@ class RequestController extends Controller
         return view('myrequests')->with('req',$req);
     }
     
-    public function req()
+    public function req(Request $request)
     {
         //
-        return view('request');
+        $don_id = $request->user_id;
+        $don = User::find($don_id);
+        return view('request')->with('don',$don);
     }
 
     public function allreq()
@@ -54,6 +56,7 @@ class RequestController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
         //
@@ -68,9 +71,32 @@ class RequestController extends Controller
         $req->req_blood = $request->reqblood;
         $req->desc = $request->desc;
         $req->status = 1;
+        $req->request_to = $request->don_id;
         $req->save();
 
         return redirect('/myrequests');
+    }
+
+    public function declinereq(Request $request)
+    {
+        //        
+        $req_id = $request->req_id;
+        $req = RequestInfo::find($req_id);
+        $req->status= 3;
+        $req->save();
+
+        return redirect('/dashboard');
+    }
+
+    public function acceptreq(Request $request)
+    {
+        //        
+        $req_id = $request->req_id;
+        $req = RequestInfo::find($req_id);
+        $req->status= 2;
+        $req->save();
+
+        return redirect('/dashboard');
     }
 
     /**

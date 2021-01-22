@@ -30,10 +30,17 @@ class BloodbankController extends Controller
                 ->select('blood_banks.*', 'blood_bank_infos.*', 'contact_tables.*','bloodbank_stocks.*','complete_adds.*')
                 ->get();
 
-        $user_type= Auth::id();
-        $type =DB::select("SELECT user_type FROM users_tables WHERE user_id = '$user_type'");
+        $id = Auth::id();
+        $user_type=DB::select("SELECT user_type FROM users_tables WHERE user_id = '$id'");
 
-        return view('bloodbank')->with('bbanks',$bbanks)->with('type',$type);
+        foreach($user_type as $type){
+            if($type->user_type=="user"){
+                return view('bloodbank-user')->with('bbanks',$bbanks);
+            }else{
+                return view('bloodbank')->with('bbanks',$bbanks);
+            }
+        }
+
     }
 
     /**

@@ -11,11 +11,7 @@
             <div class="d-flex bd-highlight align-items-center">
                 <div class="p-2 h5 w-100 bd-highlight">Bloodbanks</div>
                 <div class="p-2 flex-shrink-0 bd-highlight">
-                    @foreach ($type as $type)
-                        @if ($type->user_type=="admin")
-                          <button class="btn-sm btn-success new-btn" onclick="createBbank(1)">New</button>
-                        @endif
-                    @endforeach
+                    <button class="btn-sm btn-success new-btn" onclick="createBbank(1)">New</button>
                 </div>
             </div>
         </div>

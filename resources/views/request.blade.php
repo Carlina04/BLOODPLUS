@@ -7,6 +7,7 @@
 
 			<form action="createreq" method="post">
                 @csrf
+				<input type="hidden" name='don_id' value="{{$don->id}}">
 				<div class="form-group">	
 					<label class="form-control text-left input-label p-0 m-0" for="reqblood">Needed Blood type</label>
 					<select class="form-control" id="reqblood" name="reqblood" required>
@@ -21,7 +22,7 @@
 						<option value="AB-">AB-</option>
 					</select>
 				</div>
-				<a href="/hospitals">Check Affiliated Hospitals</a><br>
+				<a href="/hospitals" target="_blank">Check Affiliated Hospitals</a><br>
 				<div class="form-group h6 mt-4 mb-0 row">
 					<div class="col-6">
 						<div class="form-group">

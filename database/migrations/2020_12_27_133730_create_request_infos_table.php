@@ -19,7 +19,7 @@ class CreateRequestInfosTable extends Migration
             $table->foreignId('hos_admit_id');
             $table->enum('req_blood', ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-']);
             $table->longText('desc')->nullable();
-            $table->enum('status', ['Pending', 'Complete']);
+            $table->enum('status', ['Pending', 'Complete', 'Denied']);
             $table->foreignId('request_to')->nullable()->unsigned();
             $table->timestamps();
         });

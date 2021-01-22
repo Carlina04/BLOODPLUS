@@ -3,10 +3,7 @@
 @section('content')
     <div id="front" class="container text-center p-4">
         <div class="container text-center front-sub">
-            <h1>List of Requests</h1>
-            <div class="form-group">
-                <a href="/request">Make A New Request</a>
-            </div>
+            <h1>My Requests</h1>
             @foreach($req as $val)
             <div class="card p-3 m-2 text-left">
                 <p><b>Hospital Name:</b> {{$val->hospital->hos_name}}<br>

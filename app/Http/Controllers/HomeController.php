@@ -26,7 +26,7 @@ class HomeController extends Controller
     {
         $id = Auth::id();
         $seekers = DB::table('request_infos')
-                    ->join('users_tables', 'request_infos.request_to', '=', 'users_tables.user_id')
+                    ->join('users_tables', 'request_infos.request_from', '=', 'users_tables.user_id')
                     ->join('info_tables', 'users_tables.info_id', '=', 'info_tables.info_id')
                     ->join('complete_names', 'info_tables.name_id', '=', 'complete_names.name_id')
                     ->join('contact_tables', 'info_tables.contact_id', '=', 'contact_tables.contact_id')
