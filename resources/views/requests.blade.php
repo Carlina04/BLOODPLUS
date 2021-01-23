@@ -45,7 +45,7 @@
             
             <hr>
               <p class='h6 m-0 p-1'><span class='text-secondary'>Hospital Admitted : </span>{{$val->hospital->hos_name}}</p>
-              <p class='h6 m-0 p-1'><span class='text-secondary'>Hospital Admitted : </span>{{$val->hospital->hos_branch}}</p>
+              <p class='h6 m-0 p-1'><span class='text-secondary'>Hospital Branch : </span>{{$val->hospital->hos_branch}}</p>
               <p class='h6 m-0 p-1'><span class='text-secondary'>Blood Type Needed : </span>{{$val->req_blood}}</p>
               <div class='d-flex justify-content-start p-1'>
                 <div class='mr-2'>
@@ -127,7 +127,7 @@
                   <p class='h6 m-0 text-secondary'>Description :</p>
                 </div>
                 <div>
-                  <p class='h6 m-0'>{{$seeker->desc}}</p>
+                  <p class='h6 m-0'>{{$seeker->reqdesc}}</p>
                 </div>
               </div>
             </div>

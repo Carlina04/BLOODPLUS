@@ -138,7 +138,7 @@
                   <p class='h6 m-0 text-secondary'>Description :</p>
                 </div>
                 <div>
-                  <p class='h6 m-0'>{{$seeker->desc}}</p>
+                  <p class='h6 m-0'>{{$seeker->reqdesc}}</p>
                 </div>
               </div>
             </div>
