@@ -20,10 +20,6 @@ class RequestController extends Controller
     public function index()
     {
         //
-        $user_id = Auth::user()->id;
-        $req = User::find($user_id)->requests;
-
-        return view('myrequests')->with('req',$req);
     }
     
     public function req(Request $request)
@@ -37,7 +33,10 @@ class RequestController extends Controller
 
     public function requests(Request $request)
     {
-        //
+        //        
+        $user_id = Auth::user()->id;
+        $req = User::find($user_id)->requests;
+
         $id = Auth::id();
         $seekers = DB::table('request_infos')
                     ->join('users_tables', 'request_infos.request_from', '=', 'users_tables.user_id')
@@ -46,11 +45,11 @@ class RequestController extends Controller
                     ->join('contact_tables', 'info_tables.contact_id', '=', 'contact_tables.contact_id')
                     ->join('complete_adds', 'info_tables.add_id', '=', 'complete_adds.add_id')
                     ->join('hospital_infos', 'request_infos.hos_admit_id', '=', 'hospital_infos.hos_id')
-                    ->select('users_tables.*', 'info_tables.*', 'contact_tables.*','complete_names.*','complete_adds.*','request_infos.*','users_tables.*')
+                    ->select('users_tables.*', 'info_tables.*', 'contact_tables.*','complete_names.*','complete_adds.*','request_infos.*','hospital_infos.*','hospital_infos.desc as hosdesc')
                     ->where('request_infos.request_to',$id)
                     ->get();
 
-        return view('requests')->with('seekers',$seekers);
+        return view('requests')->with('req',$req)->with('seekers',$seekers);
     }
 
 

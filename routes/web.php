@@ -32,7 +32,6 @@ Route::put('/updateuser', [App\Http\Controllers\UserController::class, 'update']
 Route::delete('deleteuser',[UserController::class,'destroy']);
 Route::get('/allusers', [App\Http\Controllers\UserController::class, 'allusers'])->name('allusers');
 
-Route::get('/myrequests', [App\Http\Controllers\RequestController::class, 'index'])->name('myrequests');
 Route::get('/request', [App\Http\Controllers\RequestController::class, 'req'])->name('request');
 Route::get('/requests', [App\Http\Controllers\RequestController::class, 'requests'])->name('request');
 Route::get('/allrequests', [App\Http\Controllers\RequestController::class, 'allreq'])->name('allrequests');

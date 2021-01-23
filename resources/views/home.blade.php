@@ -24,10 +24,10 @@
                 <h4>Dashboard</h4>
             </div>
             <div class="col-sm-4">
-                <a href="/myrequests" class="btn btn-sm-lg btn-light p-3">
+                <a href="/requests" class="btn btn-sm-lg btn-light p-3">
                     <img class="app-info-icon" src="img/checklist.png" alt="picture">
                 </a>
-                <h4>My Requests</h4>
+                <h4>Requests</h4>
             </div>
             <div class="col-sm-4">            
                 <a href="/bloodbanks" class="btn btn-sm-lg btn-light p-3">

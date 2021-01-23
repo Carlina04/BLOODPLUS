@@ -122,7 +122,7 @@
                   }
                 ?>
               </p>
-              <p class='h6 m-0 p-1'><span class='text-secondary'>Hospital Admitted : </span>{{$seeker->hos_admit_id}}</p>
+              <p class='h6 m-0 p-1'><span class='text-secondary'>Hospital Admitted : </span>{{$seeker->hos_name}}</p>
               <div class='d-flex justify-content-start p-1'>
                 <div class='mr-2'>
                   <p class='h6 m-0 text-secondary'>Contact Details : </p>
