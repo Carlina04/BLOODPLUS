@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\RequestInfo;
 use App\Models\HospitalInfo;
 use App\Models\User;
+use App\Models\InfoTable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -30,8 +31,28 @@ class RequestController extends Controller
         //
         $don_id = $request->user_id;
         $don = User::find($don_id);
-        return view('request')->with('don',$don);
+        $donblood = InfoTable::find($don_id);
+        return view('request')->with('don',$don)->with('donblood',$donblood);
     }
+
+    public function requests(Request $request)
+    {
+        //
+        $id = Auth::id();
+        $seekers = DB::table('request_infos')
+                    ->join('users_tables', 'request_infos.request_from', '=', 'users_tables.user_id')
+                    ->join('info_tables', 'users_tables.info_id', '=', 'info_tables.info_id')
+                    ->join('complete_names', 'info_tables.name_id', '=', 'complete_names.name_id')
+                    ->join('contact_tables', 'info_tables.contact_id', '=', 'contact_tables.contact_id')
+                    ->join('complete_adds', 'info_tables.add_id', '=', 'complete_adds.add_id')
+                    ->join('hospital_infos', 'request_infos.hos_admit_id', '=', 'hospital_infos.hos_id')
+                    ->select('users_tables.*', 'info_tables.*', 'contact_tables.*','complete_names.*','complete_adds.*','request_infos.*','users_tables.*')
+                    ->where('request_infos.request_to',$id)
+                    ->get();
+
+        return view('requests')->with('seekers',$seekers);
+    }
+
 
     public function allreq()
     {
@@ -68,7 +89,7 @@ class RequestController extends Controller
         $req = new RequestInfo;
         $req->request_from = Auth::user()->id;
         $req->hos_admit_id = $hosid;
-        $req->req_blood = $request->reqblood;
+        $req->req_blood = $request->don_blood;
         $req->desc = $request->desc;
         $req->status = 1;
         $req->request_to = $request->don_id;

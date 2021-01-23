@@ -31,7 +31,8 @@ class HomeController extends Controller
                     ->join('complete_names', 'info_tables.name_id', '=', 'complete_names.name_id')
                     ->join('contact_tables', 'info_tables.contact_id', '=', 'contact_tables.contact_id')
                     ->join('complete_adds', 'info_tables.add_id', '=', 'complete_adds.add_id')
-                    ->select('users_tables.*', 'info_tables.*', 'contact_tables.*','complete_names.*','complete_adds.*','request_infos.*')
+                    ->join('hospital_infos', 'request_infos.hos_admit_id', '=', 'hospital_infos.hos_id')
+                    ->select('users_tables.*', 'info_tables.*', 'contact_tables.*','complete_names.*','complete_adds.*','request_infos.*','hospital_infos.*')
                     ->where('request_infos.request_to',$id)
                     ->get();
 

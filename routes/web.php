@@ -34,6 +34,7 @@ Route::get('/allusers', [App\Http\Controllers\UserController::class, 'allusers']
 
 Route::get('/myrequests', [App\Http\Controllers\RequestController::class, 'index'])->name('myrequests');
 Route::get('/request', [App\Http\Controllers\RequestController::class, 'req'])->name('request');
+Route::get('/requests', [App\Http\Controllers\RequestController::class, 'requests'])->name('request');
 Route::get('/allrequests', [App\Http\Controllers\RequestController::class, 'allreq'])->name('allrequests');
 Route::post('createreq', [App\Http\Controllers\RequestController::class, 'store']);
 Route::delete('deletereq', [App\Http\Controllers\RequestController::class, 'destroy']);

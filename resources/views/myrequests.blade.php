@@ -8,7 +8,7 @@
     <div  class="container p-3">
         <div class="container p-2 rounded shadow">
             <div class="d-flex bd-highlight align-items-center">
-                <div class="p-2 h5 w-100 bd-highlight">My Requests</div>
+                <div class="p-2 h5 w-100 bd-highlight">Requests</div>
             </div>
         </div>
 
@@ -26,7 +26,7 @@
                 <b>Type of Blood Needed:</b> {{$val->req_blood}}<br>
                 <b>Description/Notes:</b> {{$val->desc}}<br>
                 <b>Status:</b> {{$val->status}}<br>
-                <b>Donor:</b> {{$val->request_to}}</p>
+                <b>Donor:</b> {{$val->donor->name->first_name}} {{$val->donor->name->last_name}}</p>
                 <form action="deletereq" method='POST'>
                     @csrf
                     @method('delete')

@@ -9,18 +9,7 @@
                 @csrf
 				<input type="hidden" name='don_id' value="{{$don->id}}">
 				<div class="form-group">	
-					<label class="form-control text-left input-label p-0 m-0" for="reqblood">Needed Blood type</label>
-					<select class="form-control" id="reqblood" name="reqblood" required>
-						<option selected hidden>Choose...</option>
-						<option value="A+">A+</option>
-						<option value="A-">A-</option>
-						<option value="B+">B+</option>
-						<option value="B-">B-</option>
-						<option value="O+">O+</option>
-						<option value="O-">O-</option>
-						<option value="AB+">AB+</option>
-						<option value="AB-">AB-</option>
-					</select>
+					<label class="form-control text-left input-label p-0 m-0" for="reqblood">Needed Blood type: <span> <input type="hidden" name='don_blood' value="{{$donblood->blood_type}}">{{$donblood->blood_type}}</label>
 				</div>
 				<a href="/hospitals" target="_blank">Check Affiliated Hospitals</a><br>
 				<div class="form-group h6 mt-4 mb-0 row">

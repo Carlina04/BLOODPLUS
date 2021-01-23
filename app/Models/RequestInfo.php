@@ -14,6 +14,11 @@ class RequestInfo extends Model
         return $this->belongsTo('App\Models\User','request_from','id');
     }
 
+    public function donor()
+    {
+        return $this->belongsTo('App\Models\InfoTable','request_to','info_id');
+    }
+
     public function hospital()
     {
         return $this->belongsTo('App\Models\HospitalInfo','hos_admit_id','hos_id');
