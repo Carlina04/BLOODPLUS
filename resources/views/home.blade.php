@@ -3,7 +3,7 @@
 @section('content')
 
 <div class='front-info'>
-    <div class="container bg-danger text-center">
+    <div class="container text-center">
         <br>
         <br>
         <br>
@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="container bg-danger text-center">
+    <div class="container text-center">
         <div class="row align-center p-5">
             <div class="col-sm-4">
                 <a href="/dashboard" class="btn btn-sm-lg btn-light p-3">
@@ -68,7 +68,7 @@ easy way. The data is stored in a centralized server which cannot be accessed ea
             <h4>Help Donate Blood</h4>
         </div>
     </div>
-    <div class="container padding bg-danger">
+    <div class="container padding">
         <div class="app-info text-center">
             <div class="container">
                 <h1 class="app-what">Why Blood+?</h1>
