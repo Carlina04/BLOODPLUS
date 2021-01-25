@@ -23,6 +23,7 @@ class UserController extends Controller
     public function index()
     {
         //
+
         return view('/form');
     }
 
@@ -97,6 +98,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+
         $name = new CompleteName;
         $name->last_name = $request->lName;
         $name->mid_name = $request->mName;
@@ -112,13 +114,15 @@ class UserController extends Controller
         $add->save();
         
         $contact = new ContactTable;
+        $email = Auth::user();
+        $contacts = $email->email;
         $contact->contact_num = $request->num;
-        $contact->email = $request->email;
+        $contact->email = $contacts;
         $contact->save();
 
         $nameid = DB::table('complete_names')->where('last_name', $request->lName )->where('first_name', $request->fName )->value('name_id');
         $addid = DB::table('complete_adds')->where('house_num', $request->houseNo)->where('street', $request->street)->value('add_id');
-        $contactid = DB::table('contact_tables')->where('contact_num', $request->num)->where('email', $request->email)->value('contact_id');
+        $contactid = DB::table('contact_tables')->where('contact_num', $request->num)->where('email', $contacts)->value('contact_id');
 
         $info = new InfoTable;
         $info->name_id = $nameid;

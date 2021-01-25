@@ -22,7 +22,7 @@
           <div class="col-7">
             <div class="form-group">
               <label>Birthdate</label>
-              <input type="date" class="form-control" name="bday" value="2020-11-18" min="1950-01-01" max="2020-11-18" required>
+              <input type="date" class="form-control" name="bday" value="2002-12-31" min="1950-01-01" max="2002-12-31" required>
             </div>
           </div>
           <div class="col-5">
@@ -36,20 +36,6 @@
             </div>
           </div>
         </div>
-        <div class="form-group">
-          <label>Blood Type</label>
-          <select name="blood" class="form-control" required>
-          <option selected hidden>Choose...</option>
-          <option value="A-">A-</option>
-          <option value="A+">A+</option>
-          <option value="B-">B-</option>
-          <option value="B+">B+</option>
-          <option value="O-">O-</option>
-          <option value="O-">O+</option>
-          <option value="AB-">AB-</option>
-          <option value="AB+">AB+</option>
-          </select>
-        </div>
         <div class="form-group h6 mt-4 mb-0 row">
           <div class="col-5">
             <div class="form-group">
@@ -59,8 +45,18 @@
           </div>
           <div class="col-7">
             <div class="form-group">
-              <label >Email Address</label>
-              <input type="email" class="form-control" name="email" placeholder="example@email.com" required>
+              <label>Blood Type</label>
+              <select name="blood" class="form-control" required>
+              <option selected hidden>Choose...</option>
+              <option value="A-">A-</option>
+              <option value="A+">A+</option>
+              <option value="B-">B-</option>
+              <option value="B+">B+</option>
+              <option value="O-">O-</option>
+              <option value="O-">O+</option>
+              <option value="AB-">AB-</option>
+              <option value="AB+">AB+</option>
+              </select>
             </div>
           </div>
         </div>
