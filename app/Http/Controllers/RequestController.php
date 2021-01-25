@@ -94,7 +94,7 @@ class RequestController extends Controller
         $req->request_to = $request->don_id;
         $req->save();
 
-        return redirect('/myrequests');
+        return redirect('/requests');
     }
 
     public function declinereq(Request $request)
