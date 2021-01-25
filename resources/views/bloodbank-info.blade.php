@@ -186,14 +186,6 @@
                     <div class="container font-weight-normal">
                       <div class="row">
                         <div class="form-group col-3 py-2">
-                          <label>House No</label>
-                        </div>
-                        <div class="form-group col-9 p-0">
-                          <input type="text" class="form-control" value="{{$info->house_num}}" name="houseNo" required>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="form-group col-3 py-2">
                           <label>Street</label>
                         </div>
                         <div class="form-group col-9 p-0">
