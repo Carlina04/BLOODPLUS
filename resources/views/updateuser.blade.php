@@ -25,7 +25,7 @@
               <div class="col-7">
                 <div class="form-group">
                   <label>Birthdate</label>
-                  <input type="date" class="form-control" name="bday" value="{{$value->birthdate}}" min="1950-01-01" max="2020-11-18" required>
+                  <input type="date" class="form-control" name="bday" value="{{$value->birthdate}}" min="1950-01-01" max="2002-12-31" required>
                 </div>
               </div>
               <div class="col-5">
@@ -39,20 +39,6 @@
                 </div>
               </div>
             </div>
-            <div class="form-group">
-              <label>Blood Type</label>
-              <select name="blood" class="form-control" required>
-              <option selected hidden value="{{$value->blood_type}}">{{$value->blood_type}}</option>
-              <option value="A-">A-</option>
-              <option value="A+">A+</option>
-              <option value="B-">B-</option>
-              <option value="B+">B+</option>
-              <option value="O-">O-</option>
-              <option value="O-">O+</option>
-              <option value="AB-">AB-</option>
-              <option value="AB+">AB+</option>
-              </select>
-            </div>
             <div class="form-group h6 mt-4 mb-0 row">
               <div class="col-5">
                 <div class="form-group">
@@ -60,6 +46,22 @@
                   <input type="tel" class="form-control" name="num" value="{{$value->contact_num}}" pattern="^(09)\d{9}$" required>
                 </div>
               </div>
+              <div class="col-7">
+                <div class="form-group">
+                  <label>Blood Type</label>
+                  <select name="blood" class="form-control" required>
+                  <option selected hidden value="{{$value->blood_type}}">{{$value->blood_type}}</option>
+                  <option value="A-">A-</option>
+                  <option value="A+">A+</option>
+                  <option value="B-">B-</option>
+                  <option value="B+">B+</option>
+                  <option value="O-">O-</option>
+                  <option value="O-">O+</option>
+                  <option value="AB-">AB-</option>
+                  <option value="AB+">AB+</option>
+                  </select>
+                </div>
+             </div>
             </div>
             <div class="form-group h6 mt-2 mb-0">
               <label>Complete Address</label>
